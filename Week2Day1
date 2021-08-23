@@ -1,0 +1,167 @@
+https://github.com/oabuoun/common-git-commands
+https://github.com/oabuoun/markdown
+
+Intro:
+	- Definition of cyber security
+		○ NIST: The ability to protect or defend the use of cyberspace from cyber attacks
+		○ CNSS: Prevention of damage to and the protection of and the restoration of computers, electronic communications systems, electronic communications services, wire communication, and electronic communication, including information contained therein, to ensure its availability, integrity, authentication, confidentiality, and non-repudiation. 
+
+Cyber Security Cube:
+	- McCumber Cube
+	- A model framework for establishing and evaluating information security programs
+	- Depicted as a 3D Rubik's cube-like grid. The 3 dimensions are:
+		○ Desired goals (CIA Triad) Common in Interviews
+			§ Confidentiality
+				□ Unauthorised access is prevented
+			§ Integrity
+				□ Data should not be modified in an unauthorised way
+			§ Availability 
+				□ Access should not be unavailable
+		○ Data states
+			§ Storage
+				□ Data At Rest (DAR) in an information systems, such as that stored in memory or on a magnetic tape or disk
+			§ Transmission
+				□ Transferring data between information systems - also known as Data In Transit (DIT)
+			§ Processing 
+				□ Performing operations on data in order to achieve a desired objective
+		○ Safeguards 
+			§ Human Factors
+				□ Also referred to as personnel
+			§ Policy and practices
+				□ Administrative controls, also known to as operations
+			§ Technology
+				□ Software and hardware-based solutions
+
+Cyber Security Essential Terms:
+	- Asset - An asset is what we are trying to protect
+	- Vulnerability - A weakness or a gap in our protection efforts
+	- Exploit - The way how hackers leverage vulnerabilities
+	- Threat - What we are trying to protect against
+	- Risk - The intersection of assets, threats, and vulnerabilities
+
+Causes of Vulnerabilities:
+	- Design and development errors
+	- Poor system configuration
+	- Human errors
+	- Connectivity
+	- Complexity
+	- Passwords
+	- User input
+	- Management
+		○ Can lead to all the other issues
+	- Lack of training to staff
+		○ Can cause other issues on the list
+	- Communication 
+
+Cyber Attacks:
+	- Un-targeted cyber attacks
+	- Targeted cyber attacks
+
+Cyber Threat Actor:
+	- Nation-states - Geopolitical
+	- Cybercriminals - Profit
+	- Hacktivists - Ideological
+	- Terrorist groups - Ideological violence
+	- Thrill-seekers - Satisfaction
+	- Insider Threats - Discontent
+	- Natural disasters
+	
+Cyber Threats:
+	- Malware - software that does malicious tasks on a device or network
+	- Spyware - form of malware that hides on a device providing real-time information
+	- Phishing attacks - a cybercriminal attempts to lure individuals into providing sensitive data
+	- Distributed Denial of Service (DDoS) attacks - aim to disrupt a computer network by flooding the network with superfluous requests
+	- Ransomware - malware that denies access to a system or data until a ransom is paid
+		○ Screen lockers which block the entire system with a big window
+		○ Encrypters where you can get on the system but all data is encrypted
+	- Zero-day exploits - a flaw in software, hardware or firmware that is unknown to the party or parties responsible for patching the flaw
+	- Advanced Persistent Threats - when an unauthorised user gains access and remains there undetected for an extended period of time
+	- Trojan -  malware that allows a backdoor to a system
+	- Wiper attack - a form of malware whose intention is the wipe the hard drive
+	- Intellectual Property Theft - stealing or using someone's IP without permission
+	- Theft of Money - gaining access to cards or bank details
+	- Data manipulation - doesn't steal data but changes it
+	- Data Destruction - attempt to delete data
+	- Man-in-the-middle (MITM) attack - relays and possibly alters the communication between 2 parties who believe they are communicating directly with each other
+	- Drive-by downloads - downloads happening without a person's knowledge
+	- Malvertising - use of online adverts to spread malware
+	- Rogue Software - malware disguised as real software
+	- Unpatched Software - software that has a security weakness that has been patched but not yet updated
+	- Data centre disrupted by natural disaster
+	- Water holing - setting up fake website or compromising legit one in order to exploit visiting users
+	- Spear-phishing - phishing but to a targeted individual(s)
+	- Deploying a botnet - to deliver as DDoS
+	- Subverting the supply chain - to attach equipment or software being delivered to the org
+	- Insider Threat
+
+Cyber Threat Surface:
+	- All the available endpoints that a threat actor may attempt to exploit in Internet-connected devices within the cyber threat environment
+		○ Everything in the system that might be attacked
+	- The many processes that produce, deliver, and rely on information systems connected to the internet are also potential threat vectors and targets
+	- Services, devices, and data can all be targeted 
+	- Systems that connect physical entities to the internet
+
+Cyber Kill Chain:
+	- Reconnaissance 
+		○ Harvesting email addresses, conference information etc
+	- Weaponization
+		○ Coupling exploit with backdoor into deliverable payload
+	- Delivery
+		○ Delivering weaponized bundle to the victim via email, web, USB, etc
+	- Exploitation
+		○ Exploiting a vulnerability to execute code on a victim's system
+	- Installation
+		○ Installing malware on the asset
+	- Command and control
+		○ Command channel for remote manipulation of victim
+	- Actions on objectives
+		○ With 'hands on keyboard' access, intruders accomplish their original goals
+	- Retreat
+		○ Finished the objective or the malware has been found so attackers try to destroy all evidence that you ever had access to the network
+
+What we have to protect:
+	- Hardware
+		○ Firmware
+			§ Check BIOS
+			§ Check CMOS
+			§ Check UEFI
+	- Software
+	- Human-ware
+	- It's not just PCs that have to be protected
+		○ Computers in cars
+		○ Mobiles
+		○ Tablets
+		○ Servers
+			§ Computers that provide services for clients
+			§ Hardware may be customised for different services
+				□ Processing
+					® Multiple CPUs with high core counts
+				□ Storage
+					® Large volumes of HDDs
+				□ Communication
+					® Very fast communication devices like 40Gb/s network cards
+		○ Embedded systems
+		○ Internet cameras
+		○ All smart devices
+
+Windows OS:
+	
+
+	- File system
+		○ The system used to store and retrieve data to and from the storage media
+	- Things to check
+		○ Users and groups
+		○ Shared folders
+		○ Remote desktop connections
+		○ Event viewer
+		○ Windows Registry
+			§ Database of all of the system configurations
+			§ Viruses will commonly attack this first
+		○ Environment variables
+	- Powershell
+		○ Commandlet
+			§ Get-
+			§ Start-
+			§ Out-
+			§ Set-
+			§ Stop-
