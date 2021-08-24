@@ -1,0 +1,58 @@
+- Virtualisation is the process of separating a software from the hardware
+- E.g. A virtual server does not exist in a physical form, it only exists in a virtual format.
+- Hypervisor (also known as Virtual Machine Monitor (VMM)) works as an interface between VMs and the host
+- You can't run 2 OS's directly on the hardware as they will be competing for the physical hardware
+- Put the Hypervisor between the OS and the physical hardware and then you can run multiple virtual machines all on the same hardware
+- These machines don't have to be running the same OS
+- Each machine is given set resources by Hypervisor so each machine won't interact with the others' resources
+
+Virtualisation Types:
+- Type 1
+  - Hypervisor runs directly on the hardware without the hardware having it's own OS
+    - With no Host OS it doesn't take overhead so Type 1 gives better performance
+  - This is called Native/Bare-Metal
+  - No middle layer
+  - Security - Hypervisor Security
+    - If one VM gets compromised then all the others are potentially still safe as they are self-contained
+  - E.g. Xen, Microsoft Hyper V, VMware ESX/ESXi
+- Type 2
+  - The host's machine is running on a normal OS. The Hypervisor is then installed on top of that OS as software and shares resources with
+  all other applications
+  - This type is easier to get up and running
+  - This is called Hosted
+  - Middle layer of the Host's OS
+  - Security - Hypervisor Security + Host's OS Security
+    - The more layers you have the more you have to try and protect making it harder to protect
+    - If the Host OS gets compromised then so are the virtual machines
+  - E.g. VMware Workstation, VMware player, VirtualBox
+
+Linux Architecture:
+- Kernel
+- Shell
+- Applications
+- Distributions
+  - Different forms of the Linux OS customised for different purposes
+  - 3 Main distros
+    - Debian
+      - Ubuntu
+      - Kali
+    - Fedora
+      - Red Hat
+      - Centos
+    - Arch Linux
+-File systems
+  - EXT4, EXT3, BTRFS, XFS
+  - EXT4 is the most common now
+  - Linus file system works on the concept that everything starts from the "root"
+  - The concept that everything is a File
+  - Commands, names of files and directories are case sensitive
+  - Hidden files/directories start with "."
+- Linux Shell
+  - Text interface to the Kernel
+  - Referred to as command line, terminal, console, prompt
+  - How to launch
+    - Activies/Start -> Shell or Terminal
+    - CTRL + Alt + T
+  - ls command
+    - The number is how many hard links go to that file or directory
+    - The -h option will give file size in a more readable format
