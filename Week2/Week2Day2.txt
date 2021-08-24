@@ -51,7 +51,7 @@ Linux Architecture:
   - Text interface to the Kernel
   - Referred to as command line, terminal, console, prompt
   - How to launch
-    - Activies/Start -> Shell or Terminal
+    - Activities/Start -> Shell or Terminal
     - CTRL + Alt + T
   - ls command
     - The number is how many hard links go to that file or directory
