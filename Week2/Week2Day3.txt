@@ -18,7 +18,7 @@ Packages:
     - Kill the parent process
     - Adding the parameter -9 to the kill command will force it to close (kill [process ID] -9)
 
-
+Commands:
 - ps -ef will show you all processes running and what file they are accessing
 - lsof [filepath] will show the process that is using the file that you specify
   - lsof without a file path will show all open files
@@ -33,6 +33,17 @@ Packages:
 - tail will give the last 10 lines of the file
   - tail -f [file path] will follow the file and monitor all changes
 - head will give the first 10 lines of a file
+- useradd command to create a new user
+- How to add a user to a group
+  - sudo usermod -aG [group] [user]
+  - E.g. sudo usermod -aG sudo webserver
+- How to remove a user from a group
+  - gpasswd -d [user] [group]
+  - Or on Ubuntu and derivatives sudo deluser [user] [group]
+- passwd -S will show information regarding the current user's password
+  - passwd -Sa will show for all users but needs root privs
+- passwd -d [user] will delete the password for that user so they can't log in
+  - The user still exists but it can't be used 
 
 
 Logging:
