@@ -21,3 +21,32 @@ Packages:
 
 - ps -ef will show you all processes running and what file they are accessing
 - lsof [filepath] will show the process that is using the file that you specify
+  - lsof without a file path will show all open files
+- To copy and paste in terminal, highlight the text and then press SHIFT+Insert
+- Tree command can be used to look at the file system in a tree format
+- type command shows you what the command is
+- which command shows where the command is stored
+  - whereis command also shows you where the command is stored
+- history command will show you all the commands that you have entered
+- sudo apt-get remove --purge [command] will delete all files relating to the package
+- top command will show the processes but in a live view with their resources
+- tail will give the last 10 lines of the file
+  - tail -f [file path] will follow the file and monitor all changes
+- head will give the first 10 lines of a file
+
+
+Logging:
+- Use the more command to read logs
+- Log files
+  - Authorization logs
+    - /var/log/auth.log
+  - Daemon log
+    -  /var/log/daemon.log
+  - Debug log
+    - /var/log/debug
+  - Kernel log
+    - /var/log/kern.log
+  - System log
+    - /vaar/log/syslog
+  - Application log
+    - /var/log
