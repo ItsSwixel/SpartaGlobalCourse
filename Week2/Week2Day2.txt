@@ -56,3 +56,10 @@ Linux Architecture:
   - ls command
     - The number is how many hard links go to that file or directory
     - The -h option will give file size in a more readable format
+
+Git SSH:
+- ssh-keygen
+  - Generate a public private key pair
+- Put the public key in the github website
+- ssh-add [path to private key]
+- Should be working
