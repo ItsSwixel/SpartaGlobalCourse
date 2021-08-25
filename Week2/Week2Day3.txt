@@ -1,0 +1,23 @@
+Users:
+- In each line of the passwd file:
+  - Username
+  - Password placeholder
+  - UID
+  - GID
+  - User info
+  - Home directory
+  - Default shell for the user
+- Processes themselves will create their own users sometimes
+- Password hashes are stored in /etc/shadow
+
+Packages:
+- APT stands for Advanced Package Tool
+- If package manager gets stuck after update use this command
+  - Find the process ID using ps -ef
+  - Kill the apt process using sudo kill [process ID]
+    - Kill the parent process
+    - Adding the parameter -9 to the kill command will force it to close (kill [process ID] -9)
+
+
+- ps -ef will show you all processes running and what file they are accessing
+- lsof [filepath] will show the process that is using the file that you specify
