@@ -1,0 +1,38 @@
+Advanced Virtualisation:
+
+Intro:
+- Issue of variation between development and production environment
+  - Development environment is where you develop the application
+  - Production environment is where you set up to provide the service
+  - Each might have a different OS, updates, plugins, etc
+  - Issue gets more complex when you talk about a team
+- 2 solutions
+  - Vagrant
+    - Usually used in development environment
+  - Docker
+    - Usually used in production environment
+
+Vagrant:
+- A tool for building and managing virtual machine environments in a single workflow
+- Lowers development environment setup time
+- Mirrors the production environment on the developer's machines
+- The developer can still use their favourite editors, IDEs, and browsers
+- Vagrant will make a virtual environment for each production environment
+- Vagrant itself is not a Hypervisor
+- Vagrant depends on an external Hypervisor, such as
+  - Virtualbox
+  - Hyper-V
+  - VMware
+- Vagrant calls the Hypervisor a Provider
+- Vagrant can run on all major operating systems and architectures
+- Commands
+  - vagrant init [name of vagrant box]
+  - vagrant up
+  - vagrant ssh
+    - Connects to the machine
+  - vagrant halt
+- /vagrant in the root is the shared file with the host system
+- If you have an issue with the box delete the .vagrant folder
+  - This will create a new VM so just delete the old one
+- If it has issues with VBoxManager close the VBox Frontend in task manager
+- At the bottom of the vagrant file you can make it install packages by un-commenting from config.vm.provision onwards at the very bottom
