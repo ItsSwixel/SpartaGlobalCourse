@@ -36,3 +36,69 @@ Vagrant:
   - This will create a new VM so just delete the old one
 - If it has issues with VBoxManager close the VBox Frontend in task manager
 - At the bottom of the vagrant file you can make it install packages by un-commenting from config.vm.provision onwards at the very bottom
+
+Containers:
+- Containerisation creates abstraction at an OS level that allows individual, modular, and distinct functionality of the app to run independently
+- Several isolated workloads - the containers - can co-exist on a machine
+- A unit of software that is lightweight but still bundles the code, with its dependencies, and the configuration altogether into a single image
+- Like a VM but just for a single piece of software not an entire machine
+- Only borrows the kernel of the host OS
+- Where can you run containers?
+  - on Bare metal servers
+  - on top of a Hypervisor
+  - in cloud infrastructure
+- Benefits
+  - Useful in development, deploying, and testing modern distribution apps and microservices that can operate in isolated execution environments on same host machines
+  - Developers don't need to write application code for different VM OS's
+  - A complete application can be executed in its entirety without affecting other app components or software
+  - Conflicts within libraries or app components cannot occur and containers can be moved between cloud or data center instances efficiently
+- Security
+  - In 2018, 60% of orgs suffered security incident specific to containers
+  - Containers share kernel with host so they can escape the container and effect the host or other containers
+
+Docker:
+- docker run [options] [container name] [program to run]
+  - E.g. docker run -it ubuntu bash
+  - -it makes it interactive
+- docker ps will show all running docker containers
+- docker images will show you all images saved on your machine
+- docker kill or docker stop to close
+  - stop will send termination signal to give the container time to close normally
+  - kill will instantly terminate the container without it knowing
+- Containers are stateless meaning they are disposable
+  - After a container is closed you can't get that back you can only get a new one
+  - You can restart one using docker run [ID/Name] and then docker exec -it bash but its bad practice
+- docker rm [ID/Name] to remove the container completely
+  - The container must be stopped to do this
+
+Cloud Computing:
+- On demand external resources whether it be storage, processing, networking
+- Benefits
+  - Flexibility
+  - Efficiency
+  - Cost
+- Concerns and risks
+  - Security
+    - Not the only one responsible for the security of your system
+  - Data Portability
+    - All cloud providers should give the ability to move from one cloud to another
+    - Not all do this and so you could end up stuck with 1 provider
+  - Cloud provider transparency
+  - Cloud Services
+    - Check the picture in the GitHub
+    - IaaS
+      - Infrastructure as a Service
+      - Renting hardware resources from a cloud provider
+      - Company is responsible for setting up and maintaining most things
+    - PaaS
+      - Platform as a Service
+      - Leasing the platform as well as the infrastructure so you get the platform software etc
+      - The cloud provider deals with a lot more including all the network controls
+    - SaaS
+      - Software as a Service
+      - Pre-set software that exists on external servers like office 365, Gmail
+      - Much less responsibility as you're leasing the software that another company makes and maintains
+- Virtualisation Vs Cloud Computing
+  - Virtualisation and Cloud Computing are the two key buzz words
+  - The concept of virtualisation forms a base for Cloud Computing
+  - Virtualisation helps in delivery of shared computing resources, data or software
