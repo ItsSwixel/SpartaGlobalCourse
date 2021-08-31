@@ -1,0 +1,202 @@
+Networking Basics:
+
+Network Components:
+- Hosts
+  - Anything that can be connected such as PCs, Servers, etc
+- Peer-to-Peer
+- Intermediary Devices
+  - Routers
+  - Switches
+  - Firewall
+  - Etc
+- Network Media
+  - The way to connect the devices to exchange data
+  - Cables or frequency for wireless etc
+
+Network Infrastructure Type:
+- LAN
+  - Local Area Network
+  - Based on geographic location such as in 1 building whether its 2 machines or 1000 machines
+- WAN
+  - Wide Area Network
+  - An inter-connected set of LANs
+  - Usually have a 3rd party providing a service such as an ISP
+- Internet
+  - Nobody has a clear image of what the internet looks like
+  - An interconnected web (not web as the service) of all the public facing networks
+  - The individual networks do not have to be accessible by everyone, they can be private whilst remaining part of the internet
+  - Accessibility does not define anything about the internet
+    - If you're connected then whether anyone has access or not or whether you're providing a service or not you're still connected to the internet
+- Intranet
+  - Private online network only accessible to people within an organisation
+  - Connection has to be private
+  - Must comprise of multiple LANs or WANs
+- Extranet
+  - Much like an intranet but part of it can be accessed by people outside the organisation
+  - For example, parts of the network can be accessed by Suppliers, Customers, Collaborators etc
+
+Communications Fundamentals:
+- Message source
+  - Person or device that needs to send a message to another person or device
+- Message Destination
+  - Where the message ends up to be interpreted
+- Channel
+  - Media that provides the pathway over which the message travels
+- Message delivery options
+  - Unicast
+    - Message sent to a single end device
+  - Multicast
+    - Message sent to multiple specific end devices
+    - Criteria set for why any end device would receive the message
+  - Broadcast
+    - Message sent to every end device
+- Protocol Suites
+  - They are put into layers because each layer has multiple different protocols etc
+    - Its a more abstract look at the way that devices interact
+  - ISO Suite (OSI Model)
+    - 7. Application
+      - Network process to application
+      - What protocol the application is using
+      - In reality, layers 5, 6, and 7 were merged together
+    - 6. Presentation
+      - Data representation and encryption
+      - What is the data encoding that has been used
+    - 5. Session
+      - Interhost communication
+      - Determines which connection sessions are separate from each other
+    - 4. Transport
+      - TCP stands for Transmission Control Protocol
+        - This would be the recorded mail in the example
+        - TCP is used when reliability is needed over speed
+        - Used for SMTP/IMAP and HTTP/HTTPS
+        - Required properties
+          - Reliable
+          - Acknowledges data
+          - Resends lost data
+          - Delivers data in sequenced order
+      - UDP stands for User Datagram Protocol
+        - This would be the unrecorded mail in the example
+        - UDP is used for applications that need speed over reliability
+        - Use for VoIP and DNS
+        - Required properties
+          - Fast
+          - Low overhead
+          - Does not require acknowledgements
+          - Does not resend lost data
+          - Delivers data as it arrives
+      - End-to-end connections and reliability
+      - Doesn't care whether data has been verified or not
+      - Decides whether the application cares about whether you know the packet got delivered or not
+        - TCP tells you whether the packet has been received correctly
+        - UDP doesn't care whether the packet has been received or not
+      - E.g. Whether the package sent is sent as a recorded delivery or not
+      - Port Numbers
+        - Used to manage multiple, simultaneous conversations
+          - Each tab on a browser will make requests on a different port so that the transport layer knows which session its coming from
+        - Destination port number is associated with the destination application on the server host
+        - Source port is associated with the originating application on the user's host
+          - Source port becomes return address for sending the data from server to host
+        - A server can offer more than one service at a time such as
+          - SSH on port 22
+          - HTTP on port 80
+          - FTP on port 21
+        - The source machine decides where the destination port is
+          - But the destination port should be the one that the destination machine is listening on
+          - If data is sent to a closed port then the data will be refused
+          - Default port numbers are the ones that each protocol listens to by default so HTTP listens to port 80 by default
+            - If the protocol on the destination machine isn't listening on the default port then the server owner needs to let the clients know which port to use
+            - Not running your server on the default ports can be a security measure to allow access to people that know which port to connect to so that hackers have to guess all 65,536 ports
+        - Most well-known ports got put on ports 0-1023
+          - The most common ones can be found in Very_well_known_ports.png
+        - Registered ports are from 1024-49,151
+          - Assigned by IANA to other specific processes/applications but they aren't the common ones
+          - Registered ports aren't used in all standards. In this case all ports after common are ephemeral ports
+        - Private or dynamic ports are from 49,152-65,535
+          - These are known as ephemeral ports
+          - Client's OS assigns these dynamically when a connection to a service is initiated
+          - E.g. Open ephemeral port to collect webpage data on a new tab and then close it as its not needed anymore
+    - 3. Network
+      - Path determination and logical addressing
+      - Adds the logical addressing to the packets
+        - Looks at the protocols from the previous 2 layers and decides how to add the logical
+        - For example, if its WiFi or Ethernet you'd add an IP address
+      - Performs the routing function to find the best path for each packet
+      - E.g. How to get the post from a post office to the destination house
+    - 2. Data Link
+      - Physical addressing
+      - Define protocol to exchange the data on the physical layer
+    - 1. Physical
+      - Media, signal, and binary transmission
+      - The physical and electronic transmission specifications
+  - TCP/IP Protocol Suite
+    - Application layer
+    - Transport layer
+      - TCP
+      - UDP
+    - Internet layer
+      - Internet Protocol
+      - Messaging
+      - Routing Protocols
+    - Network Access layer
+      - Address Resolution
+        - ARP
+      - Data Link Protocols
+  - Encapsulation
+    - Look at Network_encapsulation_diagram.png
+
+Addressing Standards:
+- Positional Numeral Systems
+  - Digits represent different values based on their relative positions
+- In networking we use 3 systems
+  - Decimal Number System (base 10)
+  - Hexadecimal Number System (base 16)
+  - Binary Number System (base 2)
+
+MAC Addresses:
+- MAC address consists of 2 parts
+  - The first 6-digits identifies the manufacturer and this is called the OUI (Organization Unique Identifier)
+  - The second set of 6 digits identifies the device itself
+- How to find the MAC address
+  - On windows, ipconfig /all in the command prompt/powershell
+  - On Linux, ifconfig in the terminal
+  - On Mac, ifconfig in the terminal
+
+IPv4 Addressing System:
+- Network ID when the host portion is all 0s
+- Broadcast address is when the host portion is all 1s
+- 2 systems to recognise the network portion of the IP address
+  - Legacy Classful System
+    - The main issue of this was that we were wasting too many IPs
+    - Class A
+      - 2 IPs from the same network if they have the same first octet
+      - 8-bit network ID
+      - Starts with 0
+      - First octet in decimal is 0-127
+      - 10.0.0.0 - 10.255.255.255 are private
+        - Subnet mask 255.0.0.0
+    - Class B
+      - 2 IPs from the same network if they have the same first 2 octets
+      - 16-bit network ID
+      - Starts with 10
+      - First octet in decimal is 128-191
+      - 172.16.0.0 - 172.31.255.255 are private
+        - Subnet mask 255.240.0.0
+    - Class C
+      - 2 IPs from the same network if they have the same first 3 octets
+      - 24-bit network ID
+      - Starts with 110
+      - First octet in decimal is 192-223
+      - 192.168.0.0 - 192.168.255.255 are private
+        - Subnet mask 255.255.0.0
+    - Class D
+      - 32-bit Multicast Group Address
+      - Starts with 1110
+      - First octet in decimal is 224-239
+    - Class E
+      - 32-bit Experimental Address Space
+      - Starts with 1111
+      - First octet in decimal is 240-255
+  - Classless system (using subnet masks)
+- Loopback addresses 127.0.0.0/8
+- Link-Local addresses 169.254.0.0/16
+  - Known as Automatic Private IP Addressing (APIPA) addresses or self-assigned addresses 
