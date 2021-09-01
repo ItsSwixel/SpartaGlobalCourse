@@ -1,0 +1,55 @@
+Packet Tracer:
+- IP Configurator on the desktop to add IPs
+- Change hostname in the config tab
+- Ping hosts from the command prompt
+  - Ping packets are special ICMP packets
+  - ICMP stands for Internet Control Messaging Protocol
+  - It has two types, ICMP echo request and ICMP echo reply
+- Simulation tab will show all the packets moving through the simulation
+  - There is a packet filter available
+  - You can pause and play and inspect the packets individually
+
+Data-Link Layer:
+- Prepares data for the physical network layer
+- NIC-to-NIC communications within the same network
+- Ethernet is only one type of protocols/devices used in a LAN
+- Ethernet Family
+  - Most common type of LAN
+  - Connection modes
+    - Half-duplex mode: It either sends to receives data, cannot do both
+    - Full-duplex mode: send and receive at the same time
+- Layer 2 Switches
+  - Made up of small integrated circuits and the accompanying software that controls the data paths
+  - Composed of several ports
+    - Each port can connect to an end device or to another intermediary device
+  - Forward traffic (based on dest. MAC address) received on port to another port where dest. is connected
+  - A switch builds up a table based on source MAC addresses so that it knows which MAC address is on which port
+    - If it doesn't know where the destination is then it broadcasts it (except to the port that it came from)
+  - Switches will send STP (Spanning Tree Protocol) packets in order to find loops in the network and avoid them as they will crash the network
+- Address Resolution Protocol (ARP)
+  - If you know the destination IP but you don't know the destination MAC address for switching
+  - ARP is a layer 2 protocol used to find the MAC address of the NIC (on the same network) that has a certain IP address
+  - ARP mechanism
+    - Broadcast on the network asking other devices if they know what the MAC is
+    - All devices will receive the request
+    - Only the device with the destination IP will reply and that packet will contain its MAC address
+    - When the MAC address is unknown ARP will fill it with all 1s (MAC address of all 1s means everyone)
+  - arp -a will show the cache of everything in the ARP table
+  - arp -d will delete the cache
+
+Routers and Routing:
+- A router is a device that forwards traffic between different computer networks
+- Differences between level 2 switch and routers can be found in switch_vs_router.png
+- Routers don't forward broadcast frames
+- Splits broadcast domains
+- Can connect networks using different technologies
+- Default gateway
+  - The IP address of where packets should go if they can't find the IP they should go to
+  - This should be the IP of the router interface on that network
+  - If this isn't set then you won't be able to send data between the networks as the devices won't know where the router is
+- Small network routing
+  - A simple computer with 2 NICs can be a router
+- Routing table
+  - A table of its known networks starting with directly connected networks (0 hops)
+  - It has the network ID address and the subnet mask as well as which interface is connected to those
+  - Routers will swap tables to make sure that they are up-to-date with how to get to all the networks and how many hops away they are 
