@@ -1,0 +1,186 @@
+Static Routing:
+- The routers won't figure it out themselves, the admin has to input them manually
+- The routing will only take this path and never deviate even if there is a change or issue
+- Network space is the network that the router doesn't know
+- Subnet mask is the mask of the network that it doesn't know yet
+- The next hop is the IP address to the interface of the next router
+
+Dynamic Routing:
+- Networking technique that provides optimal data routing
+- Can select paths according to real-time logical network layout changes
+- It uses multiple algorithms and protocols
+- Most popular routing protocols
+  - Routing Information Protocol (RIP) (There is a version 2)
+  - Open Shortest Path First (OSPF)
+- Allows routers to share network information with other routers to help select the best path
+- Able to re-calculate and re-route traffic when more optimal paths become available
+- Many protocols
+  - Interior Gateway Protocol (IGRP)
+  - Exterior Gateway Protocol (EGP)
+  - Enhanced Interior Gateway Routing Protocol (EIGRP)
+  - Border Gateway Protocol (BGP)
+- There is an attack where someone poisons the routing tables to force traffic one way to spy on the traffic
+  - Difficult to do, normally done with nation state espionage
+
+Application Layer Protocols:
+- Dynamic Host Configuration Protocol (DHCP)
+  - Automates assignment of IP addresses, subnet masks, gateways, and other networking parameters
+  - When host connects, DHCP server is contacted indirectly, and an address is requested
+  - DHCP chooses an address from a configured range of addresses
+  - DHCP leases that IP to the host for a configurable amount of time
+  - Various devices can be a DHCP server, such as:
+    - Router or Wireless Access Point (AP)
+    - Dedicated DHCP Server (Computer)
+    - Personal Computer with a DHCP Server Software
+  - DHCP is a broadcast protocol so it can assign IPs to hosts within its broadcast domain
+    - Each network has to have its own DHCP server
+  - "DHCP server" port(67/UDP) and "DHCP client" port(68/UDP)
+    - It is one of the rare protocols that have a specified client and server port
+    - The client port is normally ephemeral but in this case it is static
+  - Operations:
+    - DHCP Client --> DHCPDISCOVER --> DHCP Server (Broadcast)
+    - DHCP Client <-- DHCPOFFER <-- DHCP Server (Broadcast)
+    - DHCP Client --> DHCPREQUEST --> DHCP Server (Broadcast)
+    - DHCP Client <-- DHCPACK <-- DHCP Server (Broadcast)
+  - Why is DHCP a broadcast protocol?
+    - The packets are all broadcasts because the device is new so it doesn't have any idea where any of the devices are
+    - The client also can't create a connection with the server because it doesn't have an IP address yet
+    - You might have multiple DHCP servers on a network so a broadcast can request from multiple to get the IP the fastest
+  - The command ipconfig /renew will force a DHCP renewal on Windows Machines
+
+- Hypertext Transfer Protocol (HTTP)
+  - Application-layer protocol for transmitting hypermedia documents, such as Hyper text Markup Language (HTML)
+  - Designed for communication between web browsers and web servers
+  - Follows classic client-server model
+  - Stateless protocol meaning the server does not keep any data between 2 requests
+  - HTTPs
+    - HTTPs is a secure version of the HTTP protocol that uses SSL/TLS for encryption and authentication
+      - Secure Socket Layer/Transport Layer Security (TLS is the new version, SSL is defunct)
+    - HTTPs uses port 443 by default and is specified by RFC2818 (May 2000)
+    - Makes it possible for people to transmit sensitive data over the internet
+    - HTTPs very important for online activities such as shopping, banking, and remote work
+
+- File Transfer Protocol (FTP)
+  - Works in 2 modes, active and passive
+    - Active works on port 21/TCP and passive works on port 20/TCP
+  - FTP is not secure
+  - You can transfer files using HTTP but FTP is much more professional and better for managing more files
+  - FTPS
+    - Also uses SSL/TLS and also runs on port 21 and is more secure than FTP alone
+    - Isn't used too much these days
+  - SFTP
+    - The more common secure FTP protocol
+    - Stands for SSH File Transfer Protocol
+    - Works on port 22/TCP
+      - Works off of the SSH port not the FTP port
+  - Use ftp [IP] to connect and then enter username and password
+  - Use get command to download from the FTP server
+  - Use put to upload a file to the FTP server
+  - quit exits out of the ftp program
+
+- Domain Name System (DNS)
+  - Stands for Domain Name System
+  - Domain names were created to convert numeric addresses into simple, recognizable names
+  - Works on port 53
+  30 TO 35 MINUTES MISSING PAGE HERE
+  - DNS Hierarchy
+    - Root level
+      - Top level domains (TLD)
+      - .net
+      - .edu
+      - .com
+      - .au
+      - .co
+      - Other top level domains
+        - cisco.com
+          - www.cisco.com
+          - ftp.cisco.com
+          - mail.cisco.com
+  - nslookup [domain name] will query the DNS server for the IP linked to that domain name
+    - This can also be used to troubleshoot name resolution issues
+  - DNS records
+    - Address Mapping Record (A) Record - Stores a hostname and its IP address
+    - Canonical Name (CNAME) Record - used to alias a hostname to another hostname
+    - Mail Exchange (MX) Record  - specifies an SMTP email server for the domain, used to route outgoing emails to an email server
+    - Start of Authority (SOA) Record - appears at beginning of DNS zone file and indicates
+      - Authoritative Name Server for current DNS zone
+      - Mail Box
+      - Minimum TTL
+      - Refresh
+      - Retry
+      - Expire
+
+- Email Systems (IMAP/POP3)
+  - Client-server method of communication
+  - Three main options:
+    - SMTP
+      - Simple Mail Transfer Protocol
+      - Send email from client mailbox to client mailbox on server
+      - Listens on port 25/TCP (no encryption) and 465 or 587 for encrypted (SMTP + SSL)
+        - 465 shouldn't be used anymore as it got reassigned
+    - POP3
+      - Post Office Protocol
+      - Used to retrieve emails from the server
+      - Works on port 110
+    - IMAP
+      - Internet Message Access Protocol
+      - Retrieve email from server
+      - Works on port 143
+        - 993 if using SSL
+      - Check pop_vs_imap.png to see the difference/further information
+
+Access Control List (ACL):
+- Contains rules that grant or deny access to certain resources (E.g. files, computers, servers, networks, printers, systems, rooms, etc)
+- ACLs tell networking devices what type of traffic can access the network, and which activity is allowed
+- In networking, ACLs are usually applied on a specific interface in a specific direction
+- A networking devices applies ACL on each packet as follows:
+  - Get dest. and source IP address
+  - Find a rule that matches the source and/or destination addresses/ports
+  - If match found, check action in rule
+    - Allow the packet to pass
+    - Deny: drop the packet
+  - The rules must have a hierarchy as it will always take the first rule that fits
+  - If no match is found then drop the packet
+    - Default final rule is deny everything
+- Wildcard bits
+  - Wildcards are the opposite of the subnet mask (replace 1 with 0, 0 with 1)
+  - Check if the source/destination IP matches a specific rule
+  - 0s mean they have to match in the rule and 255 means it can be anything
+- Firewalls
+  - A system or group or systems that enforce the ACL policy between networks
+  - Prevents the exposure of sensitive hosts, resources, and applications to untrusted users
+  - Sanitizes protocol flow, which prevents exploitation of protocol flaws
+  - Blocks malicious data from servers and clients
+  - Reduces security management complexity by off-loading most of network access control to a few firewalls
+  - Misconfigured firewall can have serious consequences for the network, such as becoming a single point of failure
+  - Network performance will slow
+  - Unauthorised traffic can be tunnelled or hidden so that it appears as legit traffic through the firewall
+  - Two commonly used types of policies
+    - Allow list (formerly White-List)
+      - Drop all packets except the ones specifically listed as acceptable
+    - Deny list (formerly Black-List)
+      - Allow all packets except what you specifically list as unacceptable
+  - Firewall types
+    - Packet Filtering Firewall
+      - Works on transport and network layers
+    - Stateful Firewall
+      - Works on application, session, transport and network layers
+      - Most common
+      - E.g.
+        - Firewall recieves a packet from bbc.com going to server
+        - Firewall keeps a connection table and if the firewall can't see data coming from server to bbc.com that packet is denied
+        - Basically, this firewall takes previous packets into account for context and therefore can dynamically allow and block based on that context
+          - It looks into the connection not just the individual packets
+    - Proxy Firewall
+      - Works on application layer
+      - Deployed between remote user and dedicated server on the internet
+      - Can be effective shielding and filtering mechanism between public networks and protected internal or private networks
+      - Authentication schemes, such as passwords and biometrics, can be set up for accessing the proxies
+      - Generally keep very detailed logs
+      - Main disadvantage is speed
+    - Web Application Firewall (WAF)
+      - Build to provide web applications security by applying rules to a HTTP conversation
+      - Certain ports must be kept open to the internet
+      - This means attacks like XSS and SQL injection can be tried
+    - Firewall Delivery Methods
+      - Check firewall_methods.png
