@@ -167,7 +167,7 @@ Access Control List (ACL):
       - Works on application, session, transport and network layers
       - Most common
       - E.g.
-        - Firewall recieves a packet from bbc.com going to server
+        - Firewall receives a packet from bbc.com going to server
         - Firewall keeps a connection table and if the firewall can't see data coming from server to bbc.com that packet is denied
         - Basically, this firewall takes previous packets into account for context and therefore can dynamically allow and block based on that context
           - It looks into the connection not just the individual packets
@@ -184,3 +184,9 @@ Access Control List (ACL):
       - This means attacks like XSS and SQL injection can be tried
     - Firewall Delivery Methods
       - Check firewall_methods.png
+  - We have firewall zones to show where is protected by the firewall
+    - These zones are called the inside zone, the outside zone and the demilitarized zone (DMZ)
+    - Inside is the zone that we trust within our network
+    - Outside is the zone outside the network that we don't have control over
+    - The DMZ has selective access to/from the outside zone
+      - The inside zone can access the DMZ but the DMZ cannot access the inside zone 

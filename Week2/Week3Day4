@@ -1,0 +1,73 @@
+Academy Stand up:
+- Started networking this week
+- Network Infrastructure types
+- OSI and TCP/IP models
+- Learned a lot of the application and data-link layer protocols
+- Difference between UDP and TCP protocols
+- Both classful and classless IP addressing schemes
+- Used cisco packettracer to build and configure a simulated network
+- Learned about switching and routing
+- Looked into network security using firewalls
+- Today we will be continuing with network security and then looking into applying our knowledge onto linux machines
+
+Intrusion Detection System (IDS) and Intrusion Prevention System (IPS):
+- Firewalls only care about the rules and don't think about what's normal so 1,000,000 packets on port 80 is fine because access to port 80 is allowed in the rules
+- IDS looks for anomalies in the traffic so if it noticed 1,000,000 packets coming on port 80 it would pick up on that and alert the network admins
+- IDS will not take action on these anomalies, it will only flag it as suspicious
+- IDS can be grouped into these categories:
+  - Host-based IDS
+  - Network-based IDS
+- IPS is a control system that accepts or rejects a packet based on the ruleset
+- Network security tool that not only detects intruders but will also prevent them launching any known attack
+- E.g. Large amount of traffic from one IP that is scanning sequential ports, IPS will detect this as a port scan and block those packets from accessing ports
+- IPS combines abilities of a firewall and an IDS
+  - Detect issues and then add dynamic rules to try and sort the issue
+
+Linux Networking (Using Labtainer):
+- Labtainer password is password123
+- Legacy commands (net-tools package)
+  - ifconfig to see interfaces
+  - ifconfig -a to see down interfaces
+  - sudo ifconfig [interface] down to take an interface offline
+  - sudo ifconfig [interface] [IP] netmask [subnet mask] to change the IP
+  - route will print the routing table on the machine
+  - sudo route add/del default gw [IP] to add or remove a default gateway to the table
+  - route -n will show everything as numbers
+  - arp will show entries in the arp cache
+  - arp -d to remove an entry
+  - arp -s to add an entry
+- New commands
+  - They all come under the iproute2 package now
+  - ip address (ip a) = ifconfig
+  - ip -4 a will show only IPv4 addresses
+  - ip -6 a will show only IPv6 addresses
+  - ip a show [interface] to show info on specific interface
+  - sudo ip link set dev [interface] down to take an interface offline
+  - sudo ip address add/del [IP]/[mask] dev [interface] to add or remove ip address
+  - ip route to show the routing table
+  - sudo ip route add default via [IP] to add a default gateway to routing table
+  - ip neigh will show the MAC addresses in your cache that are reachable
+  - ip link set dev [interface] address [MAC] to change the MAC address for the interface according to the OS
+
+iptables:
+- Look at iptables_exmaple.png for some example iptables configuration commands
+- iptables is Linux's software command-line firewall
+
+Network Address Translation (NAT):
+- There were not enough IPv4 addresses to assign a unique address to each device on the internet
+- Private addresses are used to allow devices to communicate locally
+  - See Week3Day1 to see the private addresses
+- NAT allows for a single public address to be shared by many private IP addresses
+- Maps all the private internal sockets to a public external socket
+- Static NAT
+  - one-to-one mapping of local and global addresses
+  - Hides the internal design of the network
+- Dynamic NAT
+  - Uses a pool of public IP addresses and assigns them on first-come, first-served basis
+  - One the device is done with using the public IP address it goes back into the pool and can be used by another device
+
+Port Address Translation (PAT):
+- Also known as NAT Overload
+- Maps multiple private IP addresses to a single public address or a few addresses
+- Every time there the router gets a request it assigns a port of its own for this request and adds it to a table
+  - When it gets the response back on that port, check the table for where in the internal network that request came from
