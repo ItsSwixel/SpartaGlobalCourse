@@ -24,3 +24,6 @@ print("Exponent:", c)
 
 c = -a
 print("Negative operation:", c)
+
+a = a + b
+a += b  # This is the same as the line above
