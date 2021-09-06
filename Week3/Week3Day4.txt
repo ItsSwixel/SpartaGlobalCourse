@@ -46,12 +46,19 @@ Linux Networking (Using Labtainer):
   - sudo ip address add/del [IP]/[mask] dev [interface] to add or remove ip address
   - ip route to show the routing table
   - sudo ip route add default via [IP] to add a default gateway to routing table
+    - sudo ip route add [network IP] via [router IP] to add a route from router through another router to an indirectly connected network
   - ip neigh will show the MAC addresses in your cache that are reachable
   - ip link set dev [interface] address [MAC] to change the MAC address for the interface according to the OS
 
 iptables:
-- Look at iptables_exmaple.png for some example iptables configuration commands
+- Look at iptables_example.png for some example iptables configuration commands
 - iptables is Linux's software command-line firewall
+- For using NAT with iptables use the following command
+  - sudo iptables -t nat -A PREROUTING -p [tcp/udp] --dport [port] -j DNAT --to-destination [IP]:[port]
+    - Take tcp/udp packets going to this port and send it to the machine in the private network with this IP and port
+  - sudo iptables -t nat -A POSTROUTING -o [output interface] -j MASQUERADE
+    - Send the packets out of this interface using the NAT protocol 
+  - PREROUTING command for inputs to the router, POSTROUTING command for outputs from the router
 
 Network Address Translation (NAT):
 - There were not enough IPv4 addresses to assign a unique address to each device on the internet

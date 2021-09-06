@@ -1,0 +1,55 @@
+Virtual Private Networks (VPN):
+- To secure traffic between sites and users
+- To create end-to-end private network connections
+- Is virtual in that is carries info within a private network but data is actually transmitted over public network
+- Uses client software to connect a device through a secure server
+- This creates a tunnel for the traffic to pass through without interference from the outside public network
+- This works through encapsulating the packets in additional packets that are then encrypted
+- After the connection has been made these packets can only be opened by the interfaces that have the protocol to do so
+- Benefits
+  - Cost Savings
+    - With cost-effective, high-bandwidth tech, organisations can use VPNs to reduce connectivity costs while increasing remote connection bandwidth
+  - Security
+    - Provide highest level of security available by using encryption and authentication protocols
+  - Scalability
+    - Allows orgs to use the internet making it easy to add new users without adding significant infrastructure
+  - Compatibility
+    - VPNs work on a variety of WAN link options including all popular broadband tech. Remote workers can take advantage of this to work away from the office
+- Common VPN Protocol
+  - Point-to-Point Protocol (PPTP)
+  - Layer 2 Tunnel Protocol (L2TP/IPSec)
+  - OpenVPN
+    - sudo openvpn --config [config file] --daemon to start openVPN and run in the background
+    - Client config file lines in order
+      - remote [IP] is the openVPN server to connect to
+      - dev tun to setup the tunnelling method
+      - ifconfig [internal IP] [internal IP] to set the internal IPs that the devices will use
+      - secret [key file] this is the key that will be the same on both client and server to authenticate
+    - Server config file lines in order
+      - dev tun to set the device/interface to use
+      - ifconfig [internal IP] [internal IP] to set the internal IPs to use
+      - secret [key file] is the key that will be the same on both client and server for authentication
+  - SSTP
+  - IKEv2
+- Host-to-Host
+  - A single host connecting to a single server in a secure way
+- Host-to-Site (Remote Access)
+  - The host needs to be able to access everything on the remote network
+  - VPN needs to be on a single server/router called a VPN gateway that will in turn give access to the rest of the network
+  - Host connects to the VPN gateway that will then route the traffic throughout the remote network so that the host has access to the entire network not just the server its connected to
+  - VPN Gateway config file lines in order
+    - dev tun
+    - ifconfig [internal IP] [internal IP]
+    - secret [key file]
+    - push "route [remote network ID] [remote network subnet mask]" this command advertises to the VPN that this network can be reached through the VPN
+  - Client config file lines in order
+    - remote [VPN gateway IP]
+    - dev tun
+    - ifconfig [private IP] [private IP]
+    - secret [key file]
+    - 'route [remote network ID] [remote network subnet mask] [VPN gateway private IP] 1' This command adds a new routing record to route traffic to the remote network through the tunnel
+      - The 1 at the end makes this route top priority so all traffic goes through the tunnel
+- Site-to-Site
+  - Everyone on a network wants to connect to everyone on another network
+  - Network to network connection using 2 VPN gateways that connect to each other
+  - Config files are the same as the VPN Gateway config files from h2s
