@@ -53,11 +53,15 @@ Linux Networking (Using Labtainer):
 iptables:
 - Look at iptables_example.png for some example iptables configuration commands
 - iptables is Linux's software command-line firewall
+- For using iptables without NAT use the following commands
+  - sudo iptables -A FORWARD -p [packet type] --dport [port] -s [source IP] -d [destination IP] -j ACCEPT
+  - sudo iptables -A FORWARD -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
+    - Allow all traffic part of a connection through firewall 
 - For using NAT with iptables use the following command
   - sudo iptables -t nat -A PREROUTING -p [tcp/udp] --dport [port] -j DNAT --to-destination [IP]:[port]
     - Take tcp/udp packets going to this port and send it to the machine in the private network with this IP and port
   - sudo iptables -t nat -A POSTROUTING -o [output interface] -j MASQUERADE
-    - Send the packets out of this interface using the NAT protocol 
+    - Send the packets out of this interface using the NAT protocol
   - PREROUTING command for inputs to the router, POSTROUTING command for outputs from the router
 
 Network Address Translation (NAT):
