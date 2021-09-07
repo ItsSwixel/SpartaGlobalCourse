@@ -1,0 +1,7 @@
+                  List  |  Tuple  |  Set  |  Frozenset
+Mutable           Yes   |  No     |  Yes  |  No
+Ordered           Yes   |  Yes    |  No   |  No
+Indexed           Yes   |  Yes    |  No   |  No
+Item-changeable   Yes   |  No     |  No   |  No            # Whether you can change individual items
+Duplicates        Yes   |  Yes    |  No   |  No
+Declare           []    |  ()     |{}/set | frozenset
