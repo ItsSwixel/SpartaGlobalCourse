@@ -1,0 +1,54 @@
+Definition:
+- A structured set of data held in a computer, especially one that is accessible in various ways
+
+Methods for storing data:
+- Text file
+- JSON file
+- Spreadsheet
+- Database software (Database Management Systems)
+
+Database Management Systems (DBMS):
+- Microsoft Access (Easy to use but not for heavy use)
+- Microsoft SQL Server
+- MySQL
+- MongoDB
+- SQLite3
+
+Main types of databases:
+- Flat-file database
+  - Store everything in 1 table
+  - Good for small apps where all records are related to a single topic
+  - E.g. Comma-Separated Values (CSV)
+- Relational database
+  - Ability to separate masses of data into numerous tables
+  - They are linked together through the use of keys
+  - E.g. MySQL, Microsoft Access, Microsoft SQL Server, etc
+  - Very strict on the structure
+- Big Data database
+  - Used for data analytics and business intelligence
+  - Digital age and internet of things
+  - E.g. MongoDB, Vertica, etc
+  - Structure is not that important
+  - Easier to repeat data in multiple documents than trying to link it
+  - Prioritise performance over correctness of format
+- Graph database
+- Object Oriented database
+
+Database considerations:
+- Security
+- Recovery
+- Integrity
+- Normal form
+
+MySQL DBMS:
+- One of the most popular Open Source SQL DBMS
+- Developed, distributed, and supported by Oracle
+- Most important attributes
+  - MySQL is the DBMS
+  - Databases are relational
+  - Open Source
+  - Works with client/server or embedded systems
+- Installation
+  - Local installation
+  - MySQL server
+  - MySQL container 
