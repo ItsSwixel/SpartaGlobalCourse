@@ -51,4 +51,11 @@ MySQL DBMS:
 - Installation
   - Local installation
   - MySQL server
-  - MySQL container 
+  - MySQL container
+    - Uses port TCP/3306
+
+Docker Compose:
+- 1 docker compose file to create all the containers that you want
+- 1 container for MySQL and 1 container for phpMyAdmin
+  - phpMyAdmin uses port TCP/8099
+- Docker compose is like a script that will launch all of the containers at the same time
