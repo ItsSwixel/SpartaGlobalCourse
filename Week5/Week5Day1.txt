@@ -1,0 +1,65 @@
+N-Tier Architecture:
+- One-Tier architecture:
+  - Client computer
+    - Presentation/view (CLI/GUI)
+    - Application/Business (logic)
+    - Data
+  - All pieces of the application exist in the same place
+- Two-Tier architecture:
+  - Client computer
+    - Presentation
+    - Application
+  - Database server
+    - Data
+- Three-Tier architecture
+  - Client computer
+    - Presentation/View
+  - Application server
+    - Application/Business
+  - Database server
+    - Data
+- N-Tier architecture
+  - Client computer
+    - Web browser
+  - Web server
+  - Application server
+  - Database server
+  - N-Tier because each server could be multiple servers
+
+REST API:
+- Application Programming Interface
+- 2 applications can communicate with each other
+- Regular commands in programming languages are also APIs such as print in Python
+- REST stands for Representational State Transfer
+- It is an architectural style for applications
+- Primarily used to build web services that are lightweight, maintainable, and scalable
+- Services based on REST are called RESTful Services
+- REST is not dependent on any protocol
+- But almost every RESTful service uses HTTP as its underlying protocol
+- APIs are built to give access to resources and represent those resources
+- RESTful services should have the following properties:
+  - Representation and data flow
+    - First step is to define data sources
+  - HTTP Messages and verbs
+    - HTTP works on requests and responses
+    - For any request there should be a response
+    - Verbs
+      - GET: Read
+      - POST: Create
+      - PUT: Update/Replace
+      - PATCH: Update/Modify
+        - Like PUT but you have to give specific instructions on how to update the data
+        - Not used very much
+      - DELETE: Delete
+  - URIs/Naming resources
+    - Is key in regards to the R in REST (Representational)
+  - Statelessness
+    - Requests don't take context into play, each request is its own thing that has nothing to do with previous ones
+  - Caching
+
+- Microservice architecture
+  - App its made up of a system of small services
+  - Each service may have its own DB
+  - The web app will be used to interface with each of the services
+  - The web browser communicates with the web app
+  - All the communication is done using the REST API
