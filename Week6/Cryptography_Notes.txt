@@ -1,0 +1,69 @@
+Essentials:
+- Encryption
+  - Process of transforming the original information into an unrecognizable form
+- Decryption
+  - Process of taking encoded text and turning it into a human readable form
+
+Ciphers:
+- Algorithm consisting of a series of well-defined steps that can be followed when encrypting data
+
+Encryption Classes:
+- Symmetric encryption algorithms
+  - Block ciphers
+    - Encryption done a block at a time and sent as blocks
+  - String ciphers
+    - Encryption done a bit at a time as a continuous stream
+- Asymmetric encryption algorithms
+
+Symmetric Encryption:
+  AES:
+  - Modes
+    - ECB (Electronic Code Book mode)
+      - Encrypt each block in sequence using the same key for all
+    - CBC (Cypher block chaining mode )
+      - Starts with an initialisation vector
+      - Plaintext gets XOR'd with the plaintext block before its encrypted with key
+      - Each encrypted block then gets XOR'd with the next block before encryption
+    - CFB (Cipher Feedback) (Stream cipher)
+    - OFB (Output Feedback) (Stream cipher)
+    - CTR (Counter)
+
+OpenSSL:
+- Generate keys and IV values
+  - openssl enc [algorithm] -k secret -P -md sha1
+- Encrypting with openssl
+  - openssl [algorithm] -e -in [file in] -out [file out] -K [key] -iv [IV value]
+- Decrypting with openssl
+  - openssl [algorithm] -d -in [file in] -out [file out] -K [key] -iv [IV value]
+
+Asymmetric Encryption:
+- Both keys can be used for encryption and decryption but encryption key must be different from decryption key
+  - E.g. If Key 1 encrypts then Key 2 must decrypt and vice-versa
+- Uses 512-bit keys minimum, up to 4096-bit keys
+  - Longer keys take longer and are more resource intensive
+Algorithms:
+- Diffie-Hellman (DH)
+  - Allows two parties to agree on a shared identical secret key without having communicated before
+  - Shared key is never communicated between the 2 parties
+  - Where is DH used
+    - Data is exchanged using an IPsec VPN
+    - Data is encrypted on the internet using SSL or TLS
+    - SSH data is exchanged
+  - Look at Diffie-Hellman_explained.png
+- Digital Signature Standard (DSS) and Digital Signature Algorithm (DSA)
+- RSA Encryption
+- ElGamal
+- Elliptical curve techniques
+  - Used to adapt many algorithms, such as Diffie-Hellman or ElGamal. Main advantage is that keys are much smaller
+
+Cryptographic Hashing Operations:
+- Hashes are used to verify and ensure data integrity
+- Based on one-way mathematical function that is easy to compute but hard to reverse
+- Can be used to verify authentication
+- Computationally infeasible for different data sets to come with the same hash output
+
+Hash Message Authentication Code (HMAC):
+- Adds an additional secret key as well as the plaintext message as an input to the hash function
+
+Interview Practice:
+- REVISE RISKS VS THREATS

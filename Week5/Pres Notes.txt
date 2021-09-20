@@ -1,0 +1,105 @@
+SCRUM Framework:
+- Agile development
+- Sprint length of 1 day
+- SCRUM meetings in the morning
+    - How yesterdays work went
+    - Checked if anyone needed help with anything that they hadn't mentioned
+    - Whether any new user stories were added to the backlog
+    - Looked at what user stories we had left in the backlog
+    - Assigned tasks to each person and moved them into the sprint backlog
+    - Tried to assign logically so if someone did a module that was a dependency for another they can do the one after as well
+
+- Git and GitHub
+    - Branches
+    - How branches were used for version control
+    - Code was checked in dev branches before merge
+    - Made it super easy to make sure all the finished code wasn't broken after it was in main
+    - Made it so that no work was accidentally removed through a bad commit 
+
+- Use of Trello board
+    - Made planning and tracking super easy
+    - Pass onto Bradley so he can talk more about it
+
+
+Coding Approach:
+- Modular (Bradley)
+    - Coded each individual part of the program within its own file in functions that took arguments from somewhere else
+    - Made it super easy to code as we didn't have to worry about breaking anything else
+    - All the other team members had to worry about was what data it needed in and what it gave out
+    - Made using git far easier because it meant there was no possibility for merge conflicts as it was adding a new file each time rather than 2 people editing the same file
+
+- Simple (Bradley)
+    - Wanted to keep everything as simple as possible
+    - As it was our first time utilising the SCRUM framework we wanted to focus on that
+    - Keeping the program simple also means that we will make less mistakes and therefore have to spend less time debugging
+
+- TDD (Bradley)
+    - TDD definitely helped define what the end goal of each module was
+    - Fast and easy to test the module during dev, less debug messages that could be left in
+    - Useful in making sure modules were outputting correctly for other modules to use
+
+- OOP
+    - Classes to store user info, seen in demo video a bit later
+    - Could be used to implement multiple users later if needed
+
+- Peer Review
+    - After each module was finished and initial testing had been passed it, the user story was placed into the peer review portion of the Trello board.
+    - This let the other team members know that there was a module that could be ready to be committed to the master branch
+    - Another team member would check and test before it was merged
+
+- Database
+    - SQLite was our choice as its great for lightweight local databases
+    - Program creates its own database and tables if one doesn't exist in its directory
+    - Stores operation id that increments, personal info, password entered/generated, name of the log file made if there was one
+    - Asked product owner about plaintext passwords
+
+
+After Demo:
+- Policy guidelines
+    - Password must be over 8 characters long
+    - Password must contain at least 1 uppercase letter
+    - Password must contain at least 1 number
+    - Password must contain at least 1 special character
+    - Password must not have 3 consecutive duplicate values
+
+- Limitations
+    - Docker container means no access to files but all info is printed to screen
+    - Only works in terminals due to getpass module but client asked for CLI anyway
+
+
+What we learnt:
+- We feel like we learnt a lot throughout this project and here is just a few of the main ones
+- Good practice for using GitHub with multiple people
+    - Important skill to learn as used within industry. No deleting of other's work
+
+- Agile and SCRUM week 1 but got practice
+    - Did well but some improvements on next slide
+
+- Project was challenging for those with less Python experience.
+- Just hard enough to test skills without being impossible
+- Good understanding of fundamentals for later use
+
+- None of us really used unit test module before
+- Easier to write test beforehand
+- Bradley will speak more about this on the next slide
+
+
+Project Review:
+Good:
+- Finished ahead of schedule on Wednesday
+
+- Matched specifications given to us
+- Most important part as can't say did well on other parts if final project doesn't work
+
+- Used tools taught in weeks 1-4 to be as efficient and effective as possible
+- Gained useful experience with those systems = more confident
+
+Bad:
+- Use Trello more effectively by updating more often
+
+- Second stand-up meeting in evening to catch issues of the day faster/so people won't forget
+
+
+GitHub and Docker Hub links:
+- Docker Hub and GitHub links on screen
+- Questions
