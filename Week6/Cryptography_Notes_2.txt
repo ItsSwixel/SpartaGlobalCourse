@@ -1,0 +1,77 @@
+Integrity - Asymmetric Encryption and Hashing:
+- Alice hashes the message
+- Alice then encrypts the message (not the hash) with Bob's public key so only he can decrypt it using his private key
+- She encrypts the hash with her own private key
+  - This can therefore be decrypted by anyone using Alice's public key but cannot be encrypted again in the same way as nobody has her private key
+- Both the encrypted message and the encrypted hash are sent to Bob
+- Bob decrypts the hash using Alice's public key and if it works then we know its directly from Alice
+  - If the decryption doesn't work then we know it was decrypted and encrypted again (man-in-the-middle)
+- If the message has been verified to be from Alice, using the decryption, the message is decrypted using Bob's private key
+- The message is then hashed and compared to the hash that was decrypted using Alice's public key
+- If the 2 hashes are the same then we know that the message has not been changed
+- Check public_key_hash_verification.png for a diagram
+
+Public Key Infrastructure:
+  Digital Signatures:
+    - Digital signatures are a mathematical technique used to provide authenticity, integrity, and non-repudiation
+    - Properties:
+      - Authentic: Signature cannot be forges and provides proof that the signer, and nobody else, signed the document
+      - Unalterable: After a document is signed, it cannot be altered
+      - Not reusable: The document signatures cannot be transferred to another document
+      - Non-repudiated: The signed document is considered to be the same as a physical document
+        - Person who signed document should not be able to deny that they were the one that signed it
+    - Standards:
+      - Digital Signature Algorithm (DSA)
+        - Original standard used to gen public and private key pairs
+      - RSA
+        - Commonly used for generating and verifying digital signatures
+      - Elliptic Curve Digital Signature Algorithm (ECDSA)
+        - Newer variant of DSA and provides authentication and non-repudiation
+    - Code signing
+      - Provide assurance of the authenticity and integrity of software code
+  Digital Certificates:
+    - Equivalent to an electronic passport. Enables users, hosts, and organisations to securely exchange data over the internet
+    - These certificates are given out by a trusted 3rd party
+    - Proves that an entity is the owner of a certain public key
+    - Certificate Authority gives Bob a PKI Certificate
+    - Bob exchanges the PKI Certificate with Alice
+    - Alice can then verify that certification with the CA
+    Certificate Authorities:
+      - CA's work in a tree hierarchy
+      - The root CA will gives certificates to Sub CA's who can then give certificates to everyone else
+    X.509 and Application:
+      - Standard for how the certificate should be formatted
+      - Secure web servers use X.509v3 for websites
+      - Web browsers use it to implement HTTPS client certs
+      - User mail agents that suport mail
+      - Cisco switches use it
+      - IPsec VPNs
+    Certificate Revocation:
+      - Certs are revoked if compromised or no longer needed
+      - If someone manages to steal your private key then the cert needs to be revoked as you can no longer confirm that its you using it
+      - Two common methods of revocation:
+        - Certificate revocation list (CRL)
+        - Online Certificate Status Protocol (OCSP)
+
+Access Control Modes:
+- Discretionary access control (DAC)
+  - Owner of the file gets to decide who can do what
+  - Least restrictive system
+- Mandatory access control (MAC)
+  - Files and resources have clearance levels and people with the right clearance level can use it
+  - Used in the military
+  - One of the most restrictive systems
+- Role-based access control (RBAC)
+  - Resources are locked unless you hold certain roles in the organisation
+  - E.g. Salary database can only be accessed by head of human resources
+    - Someone in the company that is higher up still wouldn't have access in this system as they aren't the head of human resources
+- Attribute-based access control (ABAC)
+  - E.g. This server can only be accessed from within the company
+  - E.g. This server can only be accessed between 09:00 and 17:00
+- Rule-based access control (RBAC)
+  - Security team sets rules as to who can access the server
+  - E.g. These IPs can access the server and these protocols can but these ones can't
+- Time-based access control (TAC)
+  - Rules based on the time and date
+  - E.g. Servers can't be accessed on the weekend
+- The principle of least privilege
