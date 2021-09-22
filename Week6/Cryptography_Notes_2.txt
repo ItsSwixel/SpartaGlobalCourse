@@ -43,7 +43,7 @@ Public Key Infrastructure:
       - Standard for how the certificate should be formatted
       - Secure web servers use X.509v3 for websites
       - Web browsers use it to implement HTTPS client certs
-      - User mail agents that suport mail
+      - User mail agents that support mail
       - Cisco switches use it
       - IPsec VPNs
     Certificate Revocation:

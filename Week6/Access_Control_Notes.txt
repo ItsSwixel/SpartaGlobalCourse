@@ -1,0 +1,110 @@
+Access Control Modes:
+- Discretionary access control (DAC)
+  - Owner of the file gets to decide who can do what
+  - Least restrictive system
+- Mandatory access control (MAC)
+  - Files and resources have clearance levels and people with the right clearance level can use it
+  - Used in the military
+  - One of the most restrictive systems
+- Role-based access control (RBAC)
+  - Resources are locked unless you hold certain roles in the organisation
+  - E.g. Salary database can only be accessed by head of human resources
+    - Someone in the company that is higher up still wouldn't have access in this system as they aren't the head of human resources
+- Attribute-based access control (ABAC)
+  - Time-based AC is kind of part of ABAC
+  - E.g. This server can only be accessed from within the company
+  - E.g. This server can only be accessed between 09:00 and 17:00
+- Rule-based access control (RBAC)
+  - Security team sets rules as to who can access the server
+  - E.g. These IPs can access the server and these protocols can but these ones can't
+- Time-based access control (TAC)
+  - Rules based on the time and date
+  - E.g. Servers can't be accessed on the weekend
+- The principle of least privilege
+
+AAA Framework:
+- Authentication
+  - Users must prove that they are who they say they are
+- Authorisation
+  - Authorisation services determine which resources the user can access and which operations they can perform
+- Accounting
+  - Recording what the user does, including what is accessed, amount of time it was accessed, and any changes that were made
+
+AAA Architecture:
+- Local AAA Authentication
+  - Sometimes known as self-contained authentication
+  - Authenticates users against locally stored usernames and passwords
+- Server-based AAA Authentication
+  - Authenticates against a central AAA server that contains usernames and passwords for all users
+
+Famous AAA Protocols:
+- Remote authentication dial-in service (RADIUS)
+  - Supports centralised authentication, authorisation, and accounting for clients that establish a connection to a network and intend to use services
+- Terminal access controller access control system (TACACS)
+  - Old system used on UNIX systems that allow remote servers to forward logon requests to authentication servers
+- TACACS+
+  - Made by Cisco as response to RADIUS
+- Kerberos
+
+SSH Lab:
+- ssh-keygen -t rsa (Created rsa keys)
+- ssh-copy-id -i [path to public rsa key] [ssh server IP]
+  - Copies client public key to the authorised keys file on the server
+
+SSH-Agent Lab:
+- eval `ssh-agent` (To make sure that the agent is running)
+- ssh-add (Adds your private key to the agent)
+- ssh -A [remote IP] (Forwards the agent during the ssh connection)
+  - Edit config in .ssh folder to add a way for this to happen automatically (Check ssh_config_example.png)
+- SSH Agent is used to prove authentication to an ssh server that already has your public key in its known keys so you don't need a password
+
+- /etc/hosts file can be used to map names to IP addresses locally for ssh purposes (Check etc_hosts.png)
+
+Fundamentals of Authentication:
+- Something you know
+  - Password, PIN, etc
+- Something you have
+  - Flash drive, proximity card, etc
+- Something you are
+  - Biometrics, fingerprint, etc
+
+- Passwords
+  - Most common form of authentication
+  - Average person has 25 different online accounts
+  - 54% of people use different passwords across accounts
+  - At one time, 86% of more than 2 million breaches passwords were identical to passwords that had already been breached
+  - Top 10 most common passwords include, 123456, Qwerty, 123456789, password, etc
+  - NCSC released a list of the top 100,000 passwords that have been in a breach
+  - Bad password practice
+    - Using dictionary words
+    - Using personal information
+    - Using patterns
+    - Using character substitutions
+    - Using numbers and special characters only at the end
+    - Using common passwords
+    - Basically anything but a random password is a bad password
+  - Attacks and Defence
+    - Attacks
+      - Brute-force attack
+      - Rainbow Table Attack
+    - Defence
+      - Salting technique
+      - Key stretching
+        - Password + salt and hash them
+        - Result of that hash will be the input of another hash
+        - This can be done multiple times
+
+- Token Authentication
+  - A material device that is used to access secure systems
+  - E.g. RFID card, chipset, dongle, etc
+
+- Biometric Authentication
+  - Advantages
+    - Can be easily compared to features saved in a database
+    - Control physical access on doors and entrances
+    - Can be added into multi-factor authentication
+  - Methods
+    - Facial recognition
+    - Fingerprint scanners
+    - Voice identification
+    - Iris scanners 
