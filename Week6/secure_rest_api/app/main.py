@@ -1,4 +1,4 @@
-from flask import Flask, make_response, request
+from flask import Flask, make_response, request, render_template
 from random import random
 
 flask_app = Flask(__name__)
@@ -8,7 +8,7 @@ flask_app = Flask(__name__)
 def index_page():
     print(request.cookies)
     if 'user_id' in request.cookies:
-        resp = make_response("Welcome back to the website!")
+        return "Welcome back to the website!"
     else:
         user_id = random()
         print(f"User ID: {user_id}")
@@ -20,6 +20,22 @@ def index_page():
 @flask_app.route('/help')
 def help_page():
     return "This is the help page"
+
+
+@flask_app.route('/login')
+def login_page():
+    return render_template('login.html')
+
+
+@flask_app.route('/authenticate', methods=["POST"])
+def authenticate_users():
+    data = request.form
+    username = data['username']
+    password = data['password']
+    # Check whether username and password are correct
+    resp = make_response("Logged in successfully")
+    resp.set_cookie("loggedIn", 'True')
+    return resp
 
 
 if __name__ == '__main__':
