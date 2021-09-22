@@ -107,4 +107,25 @@ Fundamentals of Authentication:
     - Facial recognition
     - Fingerprint scanners
     - Voice identification
-    - Iris scanners 
+    - Iris scanners
+
+- Multi-Factor Authentication
+  - Examples include codes from phones, Captcha tests, fingerprints, or facial recognition
+  - Increase confidence of users by adding multiple layers of security
+  - MFA is good defence but has its own issues as people may lose their phones or SIM cards and not be able to generate a code.
+
+- Authentication Protocols
+  - NTLM (Windows New Technology LAN Manager)
+  - KERBEROS
+  - PAP (Password authentication protocol)
+    - Very weak protocol
+  - CHAP (Challenge handshake authentication protocol)
+  - Secure Sockets Layer (SSL)/Transport Layer Security (TLS)
+
+Web App Authentication:
+- Recognise user identity against credential information
+- Associate incoming request (E.g. HTTP Request) with a set of credentials for identity or an identifier (E.g. session IF or Token)
+- Cookie-based authentication
+  - Cookies are a small piece of data created by the server and sent to the browser
+  - We read cookies as key-value pairs
+  - Browsers often need to store information for authentication and cookies can be used for this to keep you logged in on a website using a session ID, etc 
