@@ -1,0 +1,22 @@
+Token-based Authentication:
+- Cookies can only work on web browsers whereas software tokens can be used in web apps as well
+- A token is used to store the user's state on the client machine
+- JSON Web Token (JWT) is an open standard that defines a way of securely transmitting information
+- The anatomy of a JWT token comprises 3 parts separated by dots
+  - The 3 parts include:
+  - JWT Header
+    - Base64 URL-encoded JSON object
+      - Base 64 only needs 6 bits
+      - It encompasses the uppercase letters, lowercase letters, numbers, +, /
+      - It is sometimes padded with = signs to make it a fixed length
+  - JWT payload
+    - Contains information about the user account
+  - Signature
+    - HMACSHA256(base64URLEncode(header) + "." + base64UrlEncode(payload), secret)
+- The only thing that needs to be shared between all the servers is the HMAC secret code
+- Token can be stored as a cookie if they are using a browser but must be stored as a file or in a db if they are using an app
+- There is no solution to force expiring a token if it gets stolen or anything
+  - Tokens have a natural expiry date but if it was stolen before that time then they can be used by other people
+  - Only way to have it removed is to report it stolen and then it can be added to a list of deleted tokens and therefore can't be used
+- When you say log out of this account everywhere they just mark all the tokens for that account as invalid
+- Never put anything sensitive in the token as they are readable by anyone
