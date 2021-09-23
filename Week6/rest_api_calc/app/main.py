@@ -12,6 +12,16 @@ SECRET_KEY = config('KEY')
 flask_app = Flask(__name__)
 
 
+def add_database(data):
+    with closing(sqlite3.connect("data.db")) as connection:
+        with closing(connection.cursor()) as cursor:
+            cursor.execute("CREATE TABLE IF NOT EXISTS calculations (id INTEGER PRIMARY KEY, equation TEXT, result TEXT);")
+            equation = str(data[0]) + " " + data[1] + " " + str(data[2])
+            result = data[3]
+            cursor.execute(f"INSERT INTO calculations (equation, result) VALUES ('{equation}', {result});")
+            connection.commit()
+
+
 def create_token(username):
     validity = datetime.datetime.utcnow() + datetime.timedelta(days=15)
     token = jwt.encode({'username': username, 'expiry': str(validity)}, SECRET_KEY, "HS256")
@@ -51,9 +61,13 @@ def calculator():
     num1 = int(request.form['number1'])
     num2 = int(request.form['number2'])
     add = calc_module.addition(num1, num2)
+    add_database((num1, "+", num2, add))
     sub = calc_module.subtraction(num1, num2)
+    add_database((num1, "-", num2, sub))
     mul = calc_module.multiplication(num1, num2)
+    add_database((num1, "*", num2, mul))
     div = calc_module.division(num1, num2)
+    add_database((num1, "/", num2, div))
     return render_template('calc.html', addi=f"Addition: {add}", subt=f"Subtraction: {sub}",
                            mult=f"Multiplication: {mul}", divi=f"Division: {div}")
 
