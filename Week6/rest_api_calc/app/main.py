@@ -5,8 +5,10 @@ import sqlite3
 from contextlib import closing
 import hashlib
 from calc_package import calc_module
+from decouple import config
 
-SECRET_KEY = "E122B47F25FDA46567B5E88AC42F4"
+# Create your own file called .env and enter KEY=[256-bit hex key]
+SECRET_KEY = config('KEY')
 flask_app = Flask(__name__)
 
 
