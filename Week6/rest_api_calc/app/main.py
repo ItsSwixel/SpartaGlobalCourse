@@ -53,7 +53,7 @@ def calc_page():
         username = decoded_token['username']
         return render_template('calc.html', value=f"Welcome {username}!")
     else:
-        return redirect("https://127.0.0.1:5000/")
+        return redirect("/")
 
 
 @flask_app.route('/calculate', methods=['POST'])
@@ -83,7 +83,7 @@ def login_page():
     if 'token' in request.cookies:
         isUserLoggedIn = verify_token(request.cookies['token'])
     if isUserLoggedIn:
-        return redirect('https://127.0.0.1:5000/calc')
+        return redirect('/calc')
     else:
         return render_template('login.html')
 
@@ -108,7 +108,7 @@ def authenticate_users():
                 cursor.execute("UPDATE users SET token = ? WHERE username = ? AND password = ?;",
                                (user_token, username, password,))
                 conn.commit()
-                resp = make_response(redirect('https://127.0.0.1:5000/calc'))
+                resp = make_response(redirect('/calc'))
                 resp.set_cookie('token', user_token)
                 return resp
             else:
@@ -116,11 +116,11 @@ def authenticate_users():
                 cursor.execute("UPDATE users SET token = ? WHERE username = ? AND password = ?;",
                                (user_token, username, password,))
                 conn.commit()
-                resp = make_response(redirect('https://127.0.0.1:5000/calc'))
+                resp = make_response(redirect('/calc'))
                 resp.set_cookie('token', user_token)
                 return resp
 
 
 if __name__ == '__main__':
     print("This is a REST API Calculator")
-    flask_app.run(debug=True, ssl_context=('certs/cert.pem', 'certs/key.pem'))
+    flask_app.run(debug=True, ssl_context=('certs/cert.pem', 'certs/key.pem'), host='0.0.0.0')
