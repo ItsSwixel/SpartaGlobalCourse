@@ -20,3 +20,10 @@ Token-based Authentication:
   - Only way to have it removed is to report it stolen and then it can be added to a list of deleted tokens and therefore can't be used
 - When you say log out of this account everywhere they just mark all the tokens for that account as invalid
 - Never put anything sensitive in the token as they are readable by anyone
+
+How to mount host PC data to containers for data separation and persistence:
+- docker run -v [absolute path to data on host machine]:[dest path in container] [container name]
+  - You can also map ports using -p [host port]:[container port]
+- Used to keep keys out of a container
+- Used to allow access to databases inside a container but have data not be deleted when you close the container
+  - E.g. DB is stored on host machine but container needs to perform operations so mount DB into container but its kept on host machine
