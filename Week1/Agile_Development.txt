@@ -1,0 +1,169 @@
+What is agile?
+	- Agile encompasses scrum but they are not the same thing
+	- Agile is a development methodology that is iterative
+	- Agile is not a single tool, practice or method
+	- Agile is the mindset inspired by the agile manifesto
+
+Origins:
+	- Developers in 80's and 90's had high levels of failed projects and noticed these common traits
+		○ Too much analysis upfront
+			§ You're trying to work out everything that the customer wants upfront with no adaptability
+		○ Restrictive change control
+			§ Changing anything is not easy because you're already anticipating everything from your analysis
+			§ Once you need to change something in the plan there is a domino effect and you have to end up changing everything else
+		○ Too much uncertainty
+			§ Parts of the software become unpredictable because of changes
+			§ Companies had to overestimate how long the project was going to take in case something happened
+	- Whole projects ended up getting abandoned because they got too big and complicated and were too expensive to maintain/fix
+	- Software developers collaborated and experimented with new ways of working
+	- They took successful ideas and wrote down the underlying values and principles to make the Agile Manifesto
+
+The Agile Manifesto:
+	- Individuals and interactions over processes and tools
+	- Working software over comprehensive documentation
+	- Customer collaboration over contract negotiation
+		○ Contracts were made and set in stone so when changes wanted to be made it was refused because it wasn't in the contract or you had to negotiate and entirely new contract
+	- Responding to change over following a plan
+		○ If a new library comes out that is better than the one that you planned to use think about whether you can adapt to the new library rather than just sticking to the plan
+	- Whilst there is value with the second items we value the first items more
+
+The Agile Principles:
+	- Our highest priority is to satisfy the customer through early and continuous delivery of valuable software
+	- Welcome changing requirements, even late in development. Agile processes harness change for the customer's competitive advantage
+	- Deliver working software frequently, from a couple of weeks to a couple of months, with a preference to the shorter timescale
+	- Business people and developers must work together daily throughout the project
+	- Build projects around motivated individuals. Give them the environment and support they need, and trust them to get the job done
+	- The most efficient and effective method of conveying information to and within a development team is face-to-face conversation
+	- Working software is the primary measure of progress
+	- Agile processes promote sustainable development. The sponsors, developers, and users should be able to maintain a constant pace indefinitely
+	- Continuous attention to technical excellence and good design enhances agility
+	- Simplicity - the art of maximising the amount of work not done - is essential
+	- The best architectures, requirements and designs emerge from self-organising teams
+	- At regular intervals, the team reflects on how to become more effective, then tunes and adjusts its behaviour accordingly
+
+SCRUM:
+	- Team based framework to develop complex systems and products
+	- 3 pillars of scrum
+		○ Transparency
+			§ Everyone presents facts as is and collectively collaborate for the common objective. There is no hidden agenda
+		○ Inspection
+			§ Not done by an inspector but by the scrum team as a whole. Inspection can be done for product, processes, people aspects, practices
+		○ Adaptation
+			§ Adaptation is about continuous improvement, to adapt based on the results of the inspection. Everyone should reflect on how to improve
+	- Scrum roles
+		○ Product owner
+			§ Key stakeholder who should have deep understanding of the product and communicates with both the team and the other stakeholders
+		○ Scrum Master
+			§ Ensures the team keeps to the values of SCRUM, facilitates meetings and removes impediments
+		○ Development team
+			§ Effectively 3 - 9 people
+			§ Decide how the work will be done
+			§ Everyone is accountable for the team's productivity
+
+The SCRUM Team:
+	- Co-located
+	- Engaged with the customer(s)
+	- Self-Organising
+	- Accountable and Empowered
+	- Cross Functional
+
+Requirement Gathering:
+	- Try to ask questions to ensure that you have all the information
+	- Take documentation if there is any
+	- Interview people and investigate the requirements
+	- The most important thing is to communicate with all parties
+
+User Stories:
+	- As a <user type>, I want <goal> so that <reason>
+	- Do not include all the detail - just a pointer to the real requirement
+	- Only once you get to the user story do you talk to the parties involved and find out how they want it done
+	- Avoid using technical language
+	- A promise of a future conversation
+	- Terminology:
+		○ Feature
+		○ EPIC
+			§ Large user story that can be split into smaller ones
+		○ User Stories
+	- Who writes them?
+		○ Product owners responsibility to make sure that there is a backlog of user stories
+		○ Anyone on the team can write a user story
+		○ Developers can create new stories into the backlog if a story contains something that should be its own story E.g. Logging in using a FB account as well as internal accounts
+	- 3 amigos meetings are useful
+		○ People from the 3 teams Testing, Development and Product
+		○ Talk about user story and ask questions to gain more information
+	- What makes a good user story?
+		○ Understandable (by normal people)
+		○ Follow As a… I want… So that…
+		○ INVEST
+			§ Independent (Stand on its own and not be based on other user stories)
+			§ Negotiable
+			§ Valuable (It should give value to the final product)
+			§ Estimable (Be able to estimate the time and resources needed)
+			§ Small
+			§ Testable
+		○ User comes first
+		○ User personas
+		○ Create collaboratively
+		○ Keep your stories simple
+		○ Start with Epics
+		○ Refine stories until they are ready
+		○ Add acceptance criteria
+		○ Use paper cards
+		○ Keep them visible
+		○ They are not everything
+		○ The 3 C's:
+			§ Card
+			§ Conversation
+			§ Confirmation
+	- Structuring Acceptance Criteria
+		○ Gherkin Scenario - User clicks the link
+		○ Given - I am on the homepage
+		○ When - I click the provided link
+		○ Then - I should see the link click confirmation
+
+Estimation and Prioritisation:
+	- Product and sprint backlog
+	- User stories are placed into the product backlog in priority order
+	- Each item should have 3 values to help with that
+		○ Business value
+		○ Estimated effort
+			§ This can be estimated in various forms
+			§ It can represent time or "story points" which are an abstract measure of effort
+			§ How to do this
+				□ Planning Poker using a special deck of cards
+					® Decide on a scale E.g. 1 to 5
+					® Issue cards to each team member with a single number on it 1-5
+					® Team discusses effort before revealing all cards at the same time
+					® If there is a big difference then discuss why the smallest value and why the biggest value
+		○ Dependencies
+
+Definition of Ready:
+	- List of things that are required to be completed before you can start developing user stories
+	- You're ready to begin working
+
+Definition of Done:
+	- There should be an agreement within the team by what they mean by done
+	- To do this you need a checklist that means that only after everything is checked the delivery can be considered done
+	- Check def_done.png
+
+Wireframes:
+	- Blueprint or visual design for what the website/interface is going to look
+	- No specific details, just the general layout
+	- What to include?
+		○ Clear layout
+		○ Keep it simple
+		○ Only the essential things
+		○ Sometimes follows KISS idea (Keep It Simple Stupid)
+
+Retrospective:
+	- The meeting after a sprint where you can review what happened and put things back into backlog if needed
+	- The agenda
+		○ Set the stage
+		○ Gather data
+		○ Generate insights
+		○ Decide what to do
+		○ Close retro
+	- Sometimes can be organised on a board
+		○ What went well
+		○ What could be improved
+		○ Actions

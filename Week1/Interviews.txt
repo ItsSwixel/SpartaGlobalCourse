@@ -1,0 +1,79 @@
+Interview Process:
+Client terms > Resource Opportunity > Profiles Sent > Interviews booked > Prep with RM > Interview > Successful
+
+STAR Model:
+	- Situation
+	- Task
+	- Action
+	- Results
+
+What not to do:
+	- Be too close to the camera
+	- Drink from a water bottle
+	- Not wear headphones
+	- Go in with anything not working tech-wise
+	- Have too many objects in the background
+	- Look around and seem distracted
+	- Wear casual clothing
+
+What to do:
+	- Be enthusiastic
+	- Research role and company
+	- Be honest
+	- Have good lighting
+	- Show some personality
+	- Dress in smart and professional clothing
+	- Ask the interviewer to rephrase the question if you don't understand
+	- Have a quiet place to take interview
+	- Greet interviewer
+	- Have questions to have at the end of the interview
+	- Be polite
+	- Be on time
+	- Be confident but not over-confident
+	- Bring a glass of water (to buy time)
+
+Info from Sales Team (Cindy and Tim):
+Interview question - How has the pandemic changed the company? How has the business model, goals and working environment changed?
+
+Interview Preparation:
+How to prepare:
+	- Client
+		○ Make sure you have researched the client
+			§ What do they do?
+			§ Who is interviewing you?
+				□ Check them on LinkedIn and other social media
+				□ Link your role to theirs to create common ground
+				□ If you share hobbies then use that in an external example
+			§ What are their latest projects?
+				□ Link these to any skills that you have that they might need for that project
+		○ Have questions ready
+			§ What projects are you working on?
+			§ What's the best thing about working for…?
+			§ How are your teams structured?
+			§ What is your current tech stack?
+		○ Why do you want to work for this company?
+	- Technical
+		○ What?
+			§ What did you study?
+		○ Where?
+			§ Where did you do that thing?
+		○ Why?
+			§ The benefits of doing that thing?
+	- Mindset
+		○ TMAY
+			§ Tell Me About Yourself
+			§ What is your story?
+			§ Always comes up in an interview, usually first question
+		○ What are your goals?
+			§ Make sure what you tell them is close to and/or part of the role.
+			§ E.g. if you're applying for network security engineer don't tell them you want to be a malware analyst as that tells them you want to eventually leave
+		○ What things do you love doing outside of training in your role?
+		○ What is your strategy?
+			§ How are you going to handle the interview?
+			§ How can you answer common questions?
+				□ Top down model
+				□ Enumerate all the answers and then go into detail afterwards
+	- Tips
+		○ Focus on answering the question
+		○ Ask the interviewer for more details if needed
+		○ Explain the business context before getting to the details (Grab their attention in the first 10 seconds then go into details)
