@@ -37,7 +37,9 @@ Cyber Security Essential Terms:
 	- Vulnerability - A weakness or a gap in our protection efforts
 	- Exploit - The way how hackers leverage vulnerabilities
 	- Threat - What we are trying to protect against
+		- (Anything that can exploit a vuln, intentionally or by accident, and obtain, damage or destroy an asset)
 	- Risk - The intersection of assets, threats, and vulnerabilities
+		- (The potential for loss, damage or destruction of an asset as a result of a threat exploiting a vulnerability.)
 
 Causes of Vulnerabilities:
 	- Design and development errors

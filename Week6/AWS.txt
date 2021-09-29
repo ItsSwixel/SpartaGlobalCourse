@@ -17,3 +17,41 @@ Components
   - A key pair consisting of a public and private key to prove your identity when connecting to an instance
 
 Simple Storage Service (S3):
+- Simple web interface that can be used to store and retrieve any amount of data, at any time, from anywhere on the web.
+  - S3 main components:
+    - Buckets
+      - Container for objects stored in S3. Every object is contained in a bucket
+    - Objects
+      - Fundamental entities stored on S3 (Basically files). Consist of object data and metadata. Uniquely identified within a bucket by a key (name) and version ID
+    - Keys
+      - Unique identifier for an object within a bucket. Every object has exactly one key
+
+Virtual Private Cloud (VPC):
+- You can create subnets within your VPC
+- VPC
+  - Virtual network in the cloud
+- Each subnet within the VPC will have its own routing table
+- Internet gateway
+  - Allows traffic to go and come from the internet to the VPC which is otherwise isolated from the outside
+- VPC endpoint
+  - Privately connect your VPC to supported AWS and VPC endpoints
+- CIDR block
+  - Classless Inter-Domain Routing
+
+Security Groups:
+- Acts as a virtual firewall for your EC2 instance to control incoming and outgoing traffic
+- When you launch an instance you can pick one or more security groups
+- If you don't specify then EC2 will use a default group
+- You can modify the rules at any time
+- New rules are applied to all instances using that security group automatically
+- When packets come in they are checked against every rule in every security group
+- Security groups are stateful
+
+Network Access Control List (NACL):
+- Not attached to an instance, attached to the whole network
+- Used to allow/block traffic to an entire subnet
+- Compares packets to rules in order until one matches
+- NACL are stateless
+  - Stateless means that it doesn't take connections into account and therefore you have to make rules to allow the response. Stateful will track connections and allow these responses automatically.
+- A rule to allow the response should be added
+- Ephemeral ports should be taken into consideration
