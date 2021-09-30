@@ -146,8 +146,9 @@ Access Control List (ACL):
   - Wildcards are the opposite of the subnet mask (replace 1 with 0, 0 with 1)
   - Check if the source/destination IP matches a specific rule
   - 0s mean they have to match in the rule and 255 means it can be anything
+  
 - Firewalls
-  - A system or group or systems that enforce the ACL policy between networks
+  - A system or group of systems that enforce the ACL policy between networks
   - Prevents the exposure of sensitive hosts, resources, and applications to untrusted users
   - Sanitizes protocol flow, which prevents exploitation of protocol flaws
   - Blocks malicious data from servers and clients

@@ -1,7 +1,7 @@
 Virtual Private Networks (VPN):
 - To secure traffic between sites and users
 - To create end-to-end private network connections
-- Is virtual in that is carries info within a private network but data is actually transmitted over public network
+- Is virtual in that it carries info within a private network but data is actually transmitted over public network
 - Uses client software to connect a device through a secure server
 - This creates a tunnel for the traffic to pass through without interference from the outside public network
 - This works through encapsulating the packets in additional packets that are then encrypted

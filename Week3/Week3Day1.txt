@@ -58,12 +58,15 @@ Communications Fundamentals:
       - Network process to application
       - What protocol the application is using
       - In reality, layers 5, 6, and 7 were merged together
+
     - 6. Presentation
       - Data representation and encryption
       - What is the data encoding that has been used
+
     - 5. Session
       - Interhost communication
       - Determines which connection sessions are separate from each other
+
     - 4. Transport
       - TCP stands for Transmission Control Protocol
         - This would be the recorded mail in the example
@@ -90,6 +93,7 @@ Communications Fundamentals:
         - TCP tells you whether the packet has been received correctly
         - UDP doesn't care whether the packet has been received or not
       - E.g. Whether the package sent is sent as a recorded delivery or not
+      
       - Port Numbers
         - Used to manage multiple, simultaneous conversations
           - Each tab on a browser will make requests on a different port so that the transport layer knows which session its coming from
@@ -115,6 +119,7 @@ Communications Fundamentals:
           - These are known as ephemeral ports
           - Client's OS assigns these dynamically when a connection to a service is initiated
           - E.g. Open ephemeral port to collect webpage data on a new tab and then close it as its not needed anymore
+
     - 3. Network
       - Path determination and logical addressing
       - Adds the logical addressing to the packets
@@ -122,9 +127,11 @@ Communications Fundamentals:
         - For example, if its WiFi or Ethernet you'd add an IP address
       - Performs the routing function to find the best path for each packet
       - E.g. How to get the post from a post office to the destination house
+
     - 2. Data Link
       - Physical addressing
       - Define protocol to exchange the data on the physical layer
+
     - 1. Physical
       - Media, signal, and binary transmission
       - The physical and electronic transmission specifications

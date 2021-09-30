@@ -16,7 +16,7 @@ Data-Link Layer:
 - Ethernet Family
   - Most common type of LAN
   - Connection modes
-    - Half-duplex mode: It either sends to receives data, cannot do both
+    - Half-duplex mode: It either sends or receives data, cannot do both
     - Full-duplex mode: send and receive at the same time
 - Layer 2 Switches
   - Made up of small integrated circuits and the accompanying software that controls the data paths
