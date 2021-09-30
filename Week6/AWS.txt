@@ -48,7 +48,7 @@ Security Groups:
 - Security groups are stateful
 
 Network Access Control List (NACL):
-- Not attached to an instance, attached to the whole network
+- Not attached to an instance, attached to a subnet within the VPC
 - Used to allow/block traffic to an entire subnet
 - Compares packets to rules in order until one matches
 - NACL are stateless
