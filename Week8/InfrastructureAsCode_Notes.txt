@@ -41,3 +41,18 @@ IaC parts:
         - CloudFormation (AWS)
         - Ansible 
         - Terraform
+
+Terraform:
+- Make main.tf file with provider
+- terraform init (Creates terraform repo)
+- Add resource to main.tf 
+    - AMI 
+    - Instance type 
+- Environment variable names:
+    - AWS_ACCESS_KEY
+    - AWS_SECRET_KEY
+- terraform plan (Reads .tf file and plans how to make the resource)
+    - Does not create anything 
+- terraform apply (Creates what is in the plan)
+- terraform show (Shows infrastructure made in that project)
+- terraform destroy (Destroys everything in that project after a prompt)
