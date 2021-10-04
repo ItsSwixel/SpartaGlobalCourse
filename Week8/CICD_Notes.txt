@@ -1,0 +1,47 @@
+Continuous Integration & Continuous Deployment/Delivery:
+
+Continuous Integration:
+- After every commit the updated code is built and tested automatically 
+- Wikipedia definition 
+    - Practice of merging all developers' working copies to a shared mainline several times a day
+
+
+Continuous Delivery/Deployment:
+- System is automatically deployed to servers 
+- Wikipedia definition 
+    - Continuous Delivery (CD) is software engineering approach in which teams produce software in short cycles, ensuring that the software can be reliably released at any time and when releasing the software, doing so manually
+    - Continuous Deployment (CDE) is a software engineering approach in which software functionalities are delivered frequently through automated deployments 
+
+CICD Pipeline:
+- Code 
+- Commit
+    - Related code 
+- CI Pipeline
+    - Build 
+    - Unit tests 
+    - Integration tests 
+- CD Pipeline 
+    - Review
+    - Staging 
+    - Production 
+- (Look at CICD_Pipeline.png)
+
+CICD Benefits:
+- Reduce cost 
+- Faster release rate 
+- Smaller code changes 
+- Fault isolation 
+- More test reliability 
+- Increase team transparency and accountability 
+- Easy maintenance 
+
+Summary:
+- SDLC has 3 main stages
+    - Development
+    - Testing 
+    - Release 
+- SDLC historically has been very slow, preventing us from trying new ideas quickly 
+- Our job to use modern tools and automation to speed this up 
+- CI is the daily (or more) submission and testing of code 
+- CD is using automation and testing to keep your code in a constant state that is ready to be deployed 
+- CDE is the next step. If you trust your test you can push it live automatically as well 

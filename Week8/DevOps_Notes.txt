@@ -1,0 +1,97 @@
+Before DevOps:
+- 3 teams where 2 weren't part of the development which made testing, etc very confusing
+
+Infrastructure Revolution:
+- On-Premises 
+- Cloud computing 
+    - Far less ongoing costs
+    - Far less responsibility
+
+- Site Reliability Engineer (SRE)
+
+Application Design Pattern:
+- The Monolith
+    - Everything works in the same package
+    - Bad for agile because you have to finish the entire app before you can deliver anything
+- N-tier
+    - Package split into sections such as Frontend and Backend + Database
+- Micro-services
+    - Split into many sections such as Frontend, an Aggregation layer in the backend and the rest of the backend is made up of many small services that each do their own thing communicating through the aggregation layer 
+    - Good for agile because we can deliver as often as possible every time a new service is finished 
+
+Software Development Lifecycle (SDLC):
+- Waterfall
+    - Define
+    - Build
+    - Release 
+    - Value
+- Agile
+    - Define
+    - Build 
+    - Release 
+    - Define
+    - Build 
+    - Release 
+    - Define
+    - Build 
+    - Release 
+    - Value
+
+DevOps:
+- Idea that you can have Developers/Testers and IT Operations together 
+- Developers used to make software and give it to Operations and it wouldn't work because environments were different and the only thing Developers could say was "It was working on my machine"
+- Academic Definition
+    - Nobody can agree on a set definition of what devops involves 
+    - "A set of practices intended to reduce the time between committing a change to a system and the change being placed into normal production, while ensuring high quality" - Wikipedia
+- Practical definition
+    - A collaboration of Development and Operations 
+    - A culture which promotes collaboration between Development and Operations team to deploy code to production faster in an automated and repeatable way
+    - A practice of development and operation engineers taking part together in the whole service lifecycle 
+    - An approach through which superior quality software can be developed quickly and with more reliability 
+    - An alignment of development and IT operations with better communication and collaboration
+
+CAMS Model:
+- Sharing
+- Measurement
+- Automation
+- Culture 
+
+Challenges to DevOps Engineers:
+- The Four Pillars
+    - Ease of use 
+    - Flexibility 
+    - Robustness 
+    - Cost 
+- A successful DevOps implementation turns challenges into benefits 
+
+DevOps Principles:
+- Customer-Centric Action 
+- End-To-End Responsibility
+- Continuous Improvement 
+- Automate everything 
+- Work as one team 
+- Monitor and test everything 
+
+DevOps Lifecycle:
+- Continuous development 
+- Continuous testing 
+- Continuous integration 
+- Continuous delivery/deployment 
+- Continuous monitoring 
+
+Risk Register:
+- Description
+- Chance of occurrence 
+- Potential damage 
+- Risk 
+- E.g. Dev Environment Broken, Medium, Developers can not work, Low/Medium 
+
+Tasks of DevOps Engineers:
+- Be an excellent SysAdmin
+- Deploy virtualisation 
+- Hands-on experience in network and storage 
+- Knowledge of coding goes a long way 
+- Soft skills 
+- Understanding the automation tools 
+- Knowledge of testing 
+- Security aspects of the IT organisation 

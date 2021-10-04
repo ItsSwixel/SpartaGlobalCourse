@@ -5,4 +5,6 @@
 - Week 3 - Networking
 - Week 4 - Development
 - Week 5 - Development Project
-- Week 6 - Cryptography
+- Week 6 - Cryptography & AWS
+- Week 7 - Quality Gates
+- Week 8 - DevOps

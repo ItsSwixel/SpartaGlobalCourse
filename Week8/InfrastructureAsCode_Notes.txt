@@ -1,0 +1,43 @@
+Infrastructure Types:
+- On-Premises + Immutability 
+    - Hardware waste
+    - High labour costs 
+- On-Premises + Mutability 
+    - Inefficiency
+    - High running cost 
+    - Security concerns 
+- Cloud + Mutability 
+    - Inefficient + not using cloud's advantage 
+- Cloud + Immutability
+    - Efficient
+    - Cost reduction 
+    - Flexibility 
+
+Infrastructure as Code (IaC):
+- A method to provision and manage IT Infrastructure
+- Uses machine-readable definition files (E.g. source code)
+- Benefits 
+    - Speed and simplicity
+    - Configuration consistency 
+    - Minimisation of risk 
+    - Increased efficiency in development 
+    - Cost saving 
+- Best Practices
+    - Codify everything 
+    - Document as little as possible
+    - Maintain version control 
+    - Continuously test, integrate and deploy 
+    - Make your infrastructure code modular
+
+IaC parts:
+- Configuration management 
+    - Tools responsible for provisioning and maintaining the state of the systems 
+    - Best known tools
+        - Chef
+        - Puppet 
+        - Ansible 
+- Orchestration
+    - Once you create templates we need orchestration tools and scripts that talk to the cloud to pull them together into the architecture
+        - CloudFormation (AWS)
+        - Ansible 
+        - Terraform
