@@ -54,5 +54,31 @@ Terraform:
 - terraform plan (Reads .tf file and plans how to make the resource)
     - Does not create anything 
 - terraform apply (Creates what is in the plan)
+    - Has a -target=[resource type].[terraform name] parameter
 - terraform show (Shows infrastructure made in that project)
 - terraform destroy (Destroys everything in that project after a prompt)
+- terraform validate (Checks whether the file is correct without showing you the entire plan)
+- aws-vault add [profile name] is the best way to save credential keys
+- aws-vault list (Shows all the profiles on your system)
+- aws-vault exec [profile name] -- [command] (Creates temporary keys in a session just to run the command and then delete them from the environment)
+    - E.g. aws-vault exec [profile name] -- terraform plan
+
+AWS CLI:
+- aws-vault exec [profile name] -- aws s3 ls [optional: bucket link] (list all the s3 buckets)
+- aws-vault exec [profile name] -- aws s3 mb s3://[name] --region [region name] (make a new bucket with the link s3://[name])
+- aws-vault exec [profile name] -- aws s3 cp [local file] s3://[bucket name]
+- aws-vault exec [profile name] -- aws s3 sync s3://[bucket name] [local directory name] (Download everything in the bucket into the given directory)
+- aws-vault exec cyber-profile -- aws s3 rm s3://[bucket name]/[file path] [optional: --recursive] (Delete a file from a bucket. Recursive instead of the path will delete everything in the bucket)
+- aws-vault exec cyber-profile -- aws s3 rb s3://[bucket name] (Delete the entire bucket. Bucket must be empty before you can delete it)
+
+- Put the DynamoDB and Bucket in another project so that they don't get destroyed by accident
+    - Destroying these soft-locks the project 
+- Put the state and lock files on the cloud using the terraform-backend method
+
+Ansible:
+- Good for running commands on a list of devices without the need to rebuild infrastructure
+- ansible-inventory -i [file name] --list (Lists all of the hosts in the file given)
+- ansible all -i [input file] -m [module] -u [user] (We used the ping module to see if they are reachable)
+- ansible all -i [input file] -u [user] -a [command] (Runs the command on all servers)
+    - ansible [device name(s)/group name] -i [input file] -u [user] -a [command] (If you want multiple devices then use device1:device3:device5 etc)
+- ansible-playbook [playbook file] -i [hosts file] -l [device names to run on] -u [user to run on]
