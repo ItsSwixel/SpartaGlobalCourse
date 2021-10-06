@@ -1,0 +1,57 @@
+---
+- hosts: all
+  become: true
+
+  tasks:
+    - name: Install aptitude
+      apt: name=aptitude state=latest update_cache=yes force_apt_get=yes
+
+    - name: Install Required Packages for Docker
+      apt: name={{ item }} state=latest update_cache=yes force_apt_get=yes
+      loop: [ 'apt-transport-https', 'ca-certificates', 'curl', 'software-properties-common', 'python3-pip', 'virtualenv', 'python3-setuptools' ]
+
+    - name: Adding the GPG Key for Docker
+      apt_key:
+        url: https://download.docker.com/linux/ubuntu/gpg
+        state: present
+
+    - name: Adding Docker Repository
+      apt_repository:
+        repo: deb https://download.docker.com/linux/ubuntu bionic stable
+        state: present
+
+    - name: Updating apt
+      apt: update_cache=yes
+
+    - name: Installing docker-ce
+      apt: name=docker-ce state=latest
+
+    - name: Installing a Python package for docker
+      pip:
+        name: docker
+
+    - name: Adding the current user to the docker group
+      user:
+        name: ubuntu
+        groups: docker
+        append: yes
+
+    - name: Pulling a docker image
+      docker_image:
+        name: swixel/rest_api_calc
+        source: pull
+
+    - name: Copy certs to app server
+      copy:
+        src: /home/kali/Documents/SpartaGlobalCourse/Week6/rest_api_calc/certs
+        dest: /home/ubuntu
+
+    - name: Starting a Docker image
+      docker_container:
+        name: web_server_container
+        image: swixel/rest_api_calc
+        state: started
+        ports:
+          - "5000:5000"
+        volumes:
+          /home/ubuntu/certs:/certs
