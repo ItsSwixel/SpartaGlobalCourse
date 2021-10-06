@@ -1,6 +1,0 @@
-[servers]
-app ansible_host=54.195.2.172
-bastion ansible_host=54.154.5.179
-
-[all:vars]
-ansible_python_interpreter=/usr/bin/python3

@@ -88,8 +88,8 @@ resource "aws_security_group" "cyber94_full_lcooper_sg_app_tf" {
     vpc_id = aws_vpc.cyber94_full_lcooper_vpc_tf.id
 
     ingress {
-      from_port = 5000
-      to_port = 5000
+      from_port = 443
+      to_port = 443
       protocol = "tcp"
       cidr_blocks = ["0.0.0.0/0"]
     }
@@ -188,8 +188,8 @@ resource "aws_network_acl" "cyber94_full_lcooper_nacl_app_tf" {
   ingress {
     rule_no = 100
     protocol = "tcp"
-    from_port = 5000
-    to_port = 5000
+    from_port = 443
+    to_port = 443
     cidr_block = "0.0.0.0/0"
     action = "allow"
   }
@@ -368,6 +368,26 @@ resource "aws_instance" "cyber94_full_lcooper_app_tf" {
   lifecycle {
     create_before_destroy = true
   }
+
+  # Just to make sure that terraform won't continue to local-exec before the server is up
+  connection {
+    type = "ssh"
+    user = "ubuntu"
+    host = self.public_ip
+    private_key = file("/home/kali/.ssh/cyber94-lcooper.pem")
+  }
+
+  provisioner "remote-exec" {
+    inline = [
+      "pwd"
+    ]
+  }
+
+  provisioner "local-exec" {
+    working_dir = "../ansible"
+    command = "ansible-playbook -i ${self.public_ip}, -u ubuntu app-playbook.yaml"
+  }
+
 /*
   connection {
     type = "ssh"
@@ -377,7 +397,7 @@ resource "aws_instance" "cyber94_full_lcooper_app_tf" {
   }
 
   provisioner "file" {
-    source = "./docker-install.sh"
+    source = "../init-scripts/docker-install.sh"
     destination = "/home/ubuntu/docker-install.sh"
   }
 
@@ -385,12 +405,6 @@ resource "aws_instance" "cyber94_full_lcooper_app_tf" {
     inline = [
       "chmod 777 /home/ubuntu/docker-install.sh",
       "/home/ubuntu/docker-install.sh"
-    ]
-  }
-
-  provisioner "remote-exec" {
-    inline = [
-      "docker run hello-world"
     ]
   }*/
 }
