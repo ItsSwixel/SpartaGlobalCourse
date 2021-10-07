@@ -79,7 +79,6 @@ Application Layer Protocols:
   - quit exits out of the ftp program
 
 - Domain Name System (DNS)
-  - Stands for Domain Name System
   - Domain names were created to convert numeric addresses into simple, recognizable names
   - Works on port 53
   30 TO 35 MINUTES MISSING PAGE HERE
