@@ -1,0 +1,90 @@
+SpartaGlobal
+- spartaglobal.com has godaddy.com as its registrar
+- It was registered on 2013-10-04
+- It was last updated 2018-09-28
+- It has 2 name servers with the IP addresses 97.74.107.28 and 173.201.75.28
+- theHarvester found DNS listings for the following systems under spartaglobal.com 
+    - blog.spartaglobal.com 
+    - careers.spartaglobal.com 
+    - email.spartaglobal.com 
+    - ftp.spartaglobal.com 
+    - go.spartaglobal.com 
+    - imap.spartaglobal.com 
+    - people.spartaglobal.com 
+    - 2 instances of pop.spartaglobal.com 
+    - remote.spartaglobal.com 
+    - smtp.spartaglobal.com 
+    - windows.spartaglobal.com 
+    - www.spartaglobal.com 
+- Wappalyzer reports that www.spartaglobal.com is using the following tech 
+    - Google analytics 
+    - Google tag manager 
+    - Font awesome
+    - jQuery 3.1.0
+    - MS ASP.NET 
+    - IIS 8.5
+    - Bootstrap 3.3.7
+    - animate.css 
+    - Its running on windows server 
+    - Osano 
+- crt.sh reports another domain being listed of textbook.spartaglobal.com 
+- spartaglobal services have certificates from multiple CA's including
+    - Cloudflare
+    - Amazon 
+    - Let's Encrypt 
+    - GoDaddy 
+    - DigiCert
+    - COMODO
+- metagoofil found some pdf files on the domain 
+    - One regarding gender pay gap
+    - One regarding their modern slavery statement 
+    - One about the race pay gap 
+    - And two versions of their brochure versions 1.6 and 1.7
+- Sublist3r found some more domains
+    - apply.spartaglobal.com 
+    - www.blog.spartaglobal.com 
+    - learn.spartaglobal.com 
+    - www.remote.spartaglobal.com 
+    - And some duplicates from above
+
+Sparta Global Client (3 Mobile):
+- three.co.uk is registered by CSC Corporate Domains, Inc 
+- registered 15th april 1997
+- last updated 30th Dec 2020
+- expires 15th april 2022
+- has 2 name servers with the domain names udns1.cscdns.net and udns2.cscdns.uk
+- theHarvester 
+    - found 556 domain names linked to three.co.uk 
+- Wappalyzer found the following technologies on www.three.co.uk
+    - Facebook widget 
+    - Java 
+    - Hero 
+    - Twitter ads 
+    - Adobe experience platform launch 
+    - Medallia
+    - Cooladata
+    - Adobe experience platform identity service 
+    - adobe analytics 
+    - google analytics 
+    - facebook pixel 
+    - clicktale 
+    - core-js 3.6.4
+    - Lodash 2.4.1
+    - jQuery 2.1.1
+    - Hammer.js 1.1.1
+    - AngularJS 1.2.26
+    - AWIN
+    - Adobe target 2.3.2
+    - JavaServer pages 2.1
+    - Java servlet 
+    - Apache
+    - Varnish
+    - Google remarketing tag
+- crt.sh reports hundreds of certificates from many CA's including but not limited to 
+    - Entrust Inc 
+    - DigiCert 
+    - Let's Encrypt 
+    - cPanel, Inc 
+    - Cloudflare 
+- Sublist3r found 501 unique subdomains 
+- metagoofil found 49 PDF files and 1 txt file list publicly on the domain

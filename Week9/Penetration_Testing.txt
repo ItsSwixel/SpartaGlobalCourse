@@ -1,0 +1,226 @@
+Intro:
+- Definition: A method for gaining assurance in the security of an IT system by attempting to breach some or all of that system's security using the same tools and techniques an adversary might
+
+Cybersecurity Colours:
+    Teams:
+    - Blue Team (The Defenders)
+        - Responsible for defensive security, damage control, and incident response 
+    - Red Team (The Attackers/Breakers)
+        - The team commissioned to perform "ethical hacking" on an organisation 
+    - White Team (The Admins)
+        - Responsible for refereeing an engagement between Red Team of mock attackers and Blue Team of actual defenders of their enterprise's use of informational systems
+    - Yellow Team (The Builders)
+        - Team responsible for developing the security system for an organisation 
+
+    Hackers:
+    - Black Hat Hackers - Attackers 
+    - White Hat Hackers
+    - Grey Hat Hackers 
+
+    Testing:
+    - Whitebox Testing 
+    - Blackbox Testing 
+    - Greybox Testing 
+
+PenTesting Characteristics:
+    - Can be internal employees or 3rd party
+    - 3rd party should be done by qualified and experienced staff only 
+    - Cannot be entirely procedural, an exhaustive set of test cases cannot be drawn up
+    - Quality of a penetration test is closely linked to the abilities of the testers involved 
+    - NCSC recommends that HMG organisations use testers and companies which are part of the CHECK scheme
+    - Non-governmental organisations should use teams qualified under on of these schemes: CREST, Tiger scheme, Cyber scheme
+
+    Objectives:
+    - Vulnerability identification in bespoke or niche software
+    - Scenario driven testing aimed at identifying vulnerabilities 
+    - Scenario driven testing of detection and response capability 
+    
+    PenTesting Scope:
+    - A well-scoped test can give confidence:
+        - that the products and security controls tested have been configured in accordance with good practice 
+        - that there are no common or publicly known vulnerabilities in the tested components, at the time of the test 
+    
+    PenTesting Results:
+    - Typically, used to identify the level of technical risk emanating from software and hardware vulnerabilities 
+    - What techniques were used 
+    - What targets were allowed 
+    - How much knowledge of the system was given beforehand 
+    - How much knowledge is given to the system admins can vary within the same test regime
+    - Can only validate that the organisations IT systems are not vulnerable to known issues *on the day of the test*
+
+    PenTesting Expiry:
+    - Not uncommon for a year or mote to elapse between PenTests 
+    - vulnerabilities can exist in the system for a long time without you knowing they exist if this is your only means of validating security 
+    - Results of your PenTesting might be valid for a year or may be just a day, there is no guarantee 
+
+    Startup Point:
+    - External Network Penetration Test 
+        - Typically what people think of when they think pentesting (Starting on the internet)
+        - Bypass Firewalls 
+        - Router Testing
+        - IPS/IDS Evasion 
+        - DNS Footprinting 
+        - Open Port Scanning 
+        - SSH Attack 
+        - Proxy Servers 
+        - Network Vulnerabilities
+        - Email
+    - Internal Network Penetration Test 
+        - Actions a hacker might take once access has been gained to the network 
+        - Disgruntled employee with access that he or she is looking to escalate 
+    
+    PenTesting Methods/Targets:
+    - Physical
+        - Attempt to gain access to the facility through:
+            - RFID & Door Entry Systems 
+            - Lock-picking 
+            - Personnel or vendor impersonation 
+            - Motion sensors
+        - Usually performed with some form of social engineering 
+        - A pentester may need to deceive or manipulate employees to obtain access 
+    - Social Engineering
+    - Web Application
+        - Looks for:
+            - Any security issues that might have arisen as a result of:
+                - Insecure development 
+                - Design 
+                - Coding 
+            - to identify potential vulnerabilities in 
+                - Websites
+                - Web apps
+                - CRM
+                - Extranets and internally developed programmes
+        Internet-based web applications are, by their nature, globally accessible
+    - Client-side
+        - Pinpoint threats that emerge locally 
+        - Flaw in software running on the user's workstation
+        - Programs like Putty, Git clients, Sniffers, browsers
+        - Content creation packages
+        - Using uncertified Open Source Software (OSS)
+    - Cloud
+        - Public cloud services have become more popular
+        - This makes it a prime target for a hacker 
+        - Complexities in handling cloud security and legal obstacles 
+        - Hands-off or shared responsibility approach to security 
+        - May need to notify the cloud provider that you intend to carry out a test
+        - Some of the common testing areas for cloud services include:
+            - Compute security
+            - Applications and API access 
+            - DB and storage access 
+            - Encryption 
+            - VMs and un-patched OS 
+            - SSH and RDP remote admin 
+            - Poorly used firewalls 
+            - Poorly used passwords 
+    
+    PenTesting Blindness Level:
+    - Targeted (Blindless) PenTesting 
+        - Both red and blue teams know that the test is going to happen
+    - Blind PenTesting 
+        - Red team only gets information that can be found online so blue team has time to prepare
+    - Double blind PenTesting 
+        - Red team schedules an attack on their own time and blue team has no idea that a training attack is going to happen 
+    
+    PenTesting Phases:
+    - Pre-Engagement Interactions 
+        - Scope 
+        - Contracts
+        - Etc 
+    - Reconnaissance (No direct contact with target)
+    - Scanning (Direct contact with target)
+    - Threat Modelling 
+    - Exploitation 
+    - Foothold installation 
+    - Analysis and Reporting 
+    - Clean up and Remediation 
+
+
+Reconnaissance and Footprinting:
+- Intro
+    - Footprinting is the process of collecting as much information as possible about the target system to find ways to penetrate into the system 
+    - Footprinting helps to
+        - Know security posture
+        - Reduce attack area 
+        - Identify vulnerabilities
+        - Draw network map 
+    Open Source Intelligence (OSINT):
+        - Biggest source is the internet 
+        Use cases:
+            - Public civilian for basic knowledge, business, and public opinions
+            - Governments for any national threat analysis and/or services 
+            - Cybersecurity professionals for:
+                - Cyber defence 
+                - PenTesters 
+                - Security Analysts (Security Operations Centre SOC)
+                - Cybercrime groups 
+    Tools:
+        - Can be categorised-ish under:
+            - Domain and IP search
+            - Exposed data on the enterprise website 
+            - Exposed data already on the internet 
+            - Hidden data in files 
+            - Connected devices search 
+        WHOIS:
+            - Query and response tool 
+            - Query a database that contains information on domain info 
+        DNSRecon:
+            - A python script that gives info on DNS 
+        Google Hacking and Dorking:
+            - operator_name:keyword
+            - Examples:
+                - intitle:
+                - inurl:
+                - intext:
+                - define:
+                - site:
+                - phonebook:
+                - maps:
+                - book:
+                - info:
+                - movie:
+                - weather:
+                - related:
+                - link:
+                - And many more 
+        Employees:
+            - LinkedIn
+                - theHarvester
+        Dshield:
+            - Platform for users of firewalls to share intrusion information
+        Document Search:
+            - FOCA
+            - Metagoofil
+        Shodan:
+            - Search engine for finding specific kinds of Internet connected devices 
+            - It roams the internet, attempting to connect to the devices it finds. 
+            - Famous for finding unprotected webcams and Industrial Control Systems (ICS)
+        Website data:
+            - Finding technologies used on a website 
+                - Wappalyzer 
+            - Certificate Transparency
+                - crt.sh 
+            - Enumerating subdomains
+                - Sublist3r
+            - Finding old websites 
+                - Wayback machine
+        Finding tools:
+            - osintframework.com
+
+Scanning:
+- Definition 
+    - Scanning is 
+        - A set of procedures
+        - For identifying live hosts, ports and services 
+        - For discovering OS and architecture of target system 
+        - Identifying vulnerabilities and threats in the network 
+- Network scanning 
+    - Process of gathering information about a network to determine all active devices on it 
+    - Maybe types of network scan but can categorise based on what actions are being taken
+    Types:
+        - Passive scanning 
+            - Silently analyse network traffic (packet sniffing) to identify endpoints and traffic patterns 
+            - TCPDump and Wireshark are both famous tools for this 
+            - Has some limitations:
+                - Can't find devices or applications that never communicate on the network 
+                - Infected systems intentionally distributing misinformation
+        - Active scanning 
