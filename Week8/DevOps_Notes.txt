@@ -79,6 +79,16 @@ DevOps Lifecycle:
 - Continuous delivery/deployment 
 - Continuous monitoring 
 
+Development Loop:
+- Plan
+- Code
+- Build
+- Test
+- Release 
+- Deploy 
+- Operate
+- Monitor
+
 Risk Register:
 - Description
 - Chance of occurrence 
