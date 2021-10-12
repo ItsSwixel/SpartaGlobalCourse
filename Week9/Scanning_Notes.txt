@@ -1,0 +1,161 @@
+Scanning:
+- Definition 
+    - Scanning is 
+        - A set of procedures
+        - For identifying live hosts, ports and services 
+        - For discovering OS and architecture of target system 
+        - Identifying vulnerabilities and threats in the network 
+- Network scanning 
+    - Process of gathering information about a network to determine all active devices on it 
+    - Maybe types of network scan but can categorise based on what actions are being taken
+    Types:
+        - Passive scanning 
+            - Silently analyse network traffic (packet sniffing) to identify endpoints and traffic patterns 
+            - TCPDump and Wireshark are both famous tools for this 
+            - Has some limitations:
+                - Can't find devices or applications that never communicate on the network 
+                - Infected systems intentionally distributing misinformation
+        - Active scanning 
+            - Sending traffic into the network and querying individual endpoints 
+            - Three levels on active scanning:
+                - Host Scanning 
+                    - Detecting all active hosts on the network and mapping them to their IP addresses 
+                    - 2 protocols most commonly used:
+                        - ARP Scans
+                            - Send out to many IP addresses to determine which are up based on which ones respond 
+                        - ICMP Scans 
+                            - Types of ICMP packets can be used 
+                                - Echo (or ping) requests
+                                - Timestamp messages to determine latency between hosts 
+                                - Address mask request to get the subnet mask for the network 
+                - Port Scanning 
+                    - Process of sending packets to specific ports on a host and analysing the responses to learn details about its running services or vulnerabilities 
+                    - Attempts to classify ports into one of three designations:
+                        - Open: Destination responds
+                        - Closed: You get a reply saying there is no service listening 
+                        - Filtered: No reply 
+                    - Port scanning methodology
+                        - Vanilla: Scan all 65535 ports 
+                        - Strobe: Scan only known services/ports 
+                        - Sweep: Scan the same ports on several machines 
+                    - TCP Handshake
+                        - 3-way handshake 
+                            - Client sends SYN packet 
+                            - Server responds SYN ACK if there was a service on that port listening
+                            - Client then send ACK packet back
+                        - Used in SYN flooding where attacker sends SYN packets but ignores the SYN ACK packet 
+                            - Can be used in Denial of Service
+                    - TCP Scanning 
+                        - SYN Scans (Port closed or not?)
+                        - ACK Scan (Port filtered or not?)
+                        - TCP Connect Scan (Uses the full handshake)
+                        - NULL, FIN, and Xmas Scans 
+                            - NULL = no flag 
+                            - FIN = Send FIN flag 
+                            - Xmas = Alternating flags one on, one off 
+                        - Results:
+                            - Closed: a RST (or ICMP port unreachable) packet
+                                - Not all OS send RST packets 
+                            - Open or Filtered: No response 
+                        - IDLE Scans 
+                            - Spoofed IP to send SYN packet 
+                            - Not easy as you spoof IP but need to make sure response comes back to you
+                            - Must be able to control the router/switch
+                    - UDP Scanning 
+                        - Send UDP packet to many ports 
+                        - Receiving:
+                            - UDP packet: port is open 
+                            - ICMP port unreachable: closed port 
+                            - No response means port is either open or filtered
+                - OS Fingerprinting 
+                    - Attempting to determine the OS running on a host 
+                    - Common techniques are based on analysing:
+                        - IP TTL Values
+                        - The IP DF Option 
+                        - The IP Type of Service 
+                        - IP ID values 
+                        - TCP Window Size (How many packets do you send at a time?)
+                        - TCP Options 
+                        - Initial Sequence Number 
+                        - DHCP request 
+                        - ICMP request 
+                        - HTTP packets (User agent field. E.g. Firefox working on Linux)
+                        - Running services 
+                        - Open port patterns 
+                - Hybrid Scanning 
+                    - Using both active and passive scanning together is important 
+                    - Be aware of consequences of different types to make the best decision 
+                    - Active scanning should be carried out temporarily to avoid production downtimes or disruptions 
+                    - Passive offers lower chance of disruption but doesn't give the same results 
+    - Network Scanners:
+        - Nmap
+            - Free and open-source 
+            - Useful for tasks such as network inventory, managing service upgrade schedules, and monitoring host or service uptime 
+            - Uses raw IP packets to determine:
+                - Hosts on the network 
+                - Services 
+                - OS and versions 
+                - Type of firewalls being used 
+            - Nmap has several utilities
+                - Classic command-line 
+                - Advanced GUI and results viewer (Zenmap)
+                - Flexible data transfer, redirection, and debugging tool (Ncat)
+                - Scan results comparison (Ndiff) 
+                - Packet generation and response analysis tool (Nping)
+- Vulnerability Scanning 
+    - The act of identifying potential vulnerabilities in network devices such as firewalls, routers, switches, servers and applications 
+    - A vulnerability scanner:
+        - scans a specified set of ports on a remote host 
+        - tries to test the service offered at each port for its known vulnerabilities 
+        - Its automated 
+        - Do not exploit vulnerabilities (This has to be done separately)
+    - Vulnerability data source 
+        - CVE refers to Common Vulnerabilities and Exposures
+        - Mitre CVE 
+        - NIST NVD 
+        - CVE Details 
+        - VULDB 
+        - Vulnerability Assessment Platform 
+    - Vulnerability Categories 
+        - Outdated software 
+        - Misconfigured software 
+        - Poorly developed applications 
+            - website attacks 
+            - mobile application attacks 
+        - cloud applications 
+        - data breaches 
+        - Vulnerabilities in file shares in the form '\\server\share over the SMB protocol'
+    - Vulnerability scanner types:
+        - Network vulnerability scanners 
+        - Wireless scanners 
+        - Agent-based scanners 
+        - Web application scanners 
+        - Database scanners 
+    - Vulnerability Scanning Scheduling Strategy
+        - Change based 
+            - Any time you change something in the network you scan for vulnerabilities again 
+        - Hygiene based 
+        - Compliance based 
+    - Things to consider when running scans 
+        - Are your systems accessible to the scanner?
+        - Are any of your systems protected by an IPS/IDS or WAF?
+        - Do you need authentication?
+    - Vulnerability Scanners 
+        - Nessus (Most famous cross-platform)
+            - Has a GUI 
+            - Compatible with almost every OS 
+            - Not completely free 
+        - OpenVAS/GVM 
+            - Renamed to Greenbone Vulnerability Management 
+            - Needs a license 
+        - Burp Suite 
+        - SQLMap 
+            - Open-source penetration testing tool 
+            - Automates the detecting and exploiting of SQL injection flaws and taking over of database servers 
+            - Powerful detection engine and many niche features 
+        - OWASP ZAP 
+            - Open Web Application Security Project Zed Attack Proxy
+            - Free, open-source penetration testing tool 
+            - Designed specifically for web applications 
+            - Known as a man-in-the-middle proxy 
+            - Can be standalone or as a daemon 

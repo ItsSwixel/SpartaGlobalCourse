@@ -206,21 +206,3 @@ Reconnaissance and Footprinting:
         Finding tools:
             - osintframework.com
 
-Scanning:
-- Definition 
-    - Scanning is 
-        - A set of procedures
-        - For identifying live hosts, ports and services 
-        - For discovering OS and architecture of target system 
-        - Identifying vulnerabilities and threats in the network 
-- Network scanning 
-    - Process of gathering information about a network to determine all active devices on it 
-    - Maybe types of network scan but can categorise based on what actions are being taken
-    Types:
-        - Passive scanning 
-            - Silently analyse network traffic (packet sniffing) to identify endpoints and traffic patterns 
-            - TCPDump and Wireshark are both famous tools for this 
-            - Has some limitations:
-                - Can't find devices or applications that never communicate on the network 
-                - Infected systems intentionally distributing misinformation
-        - Active scanning 
