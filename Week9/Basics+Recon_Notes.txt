@@ -205,4 +205,3 @@ Reconnaissance and Footprinting:
                 - Wayback machine
         Finding tools:
             - osintframework.com
-

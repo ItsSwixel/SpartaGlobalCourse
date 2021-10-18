@@ -1,0 +1,45 @@
+1. Spearphishing link
+    - A link was sent in an email to specific people high up in the company containing a link to a malicious download 
+2. Spearphishing attachment
+    - Another set of emails was sent out containing a Word document disguised as CVs or Complaint Letters which contained malicious macros
+3. Scripting
+    - We both agree that this option should be scripting as within its description on MITRE ATT&CK is states that it includes office app macros 
+4. User execution
+    - We both agree that this should be user execution as they downloaded the files/clicked the links themselves when they shouldn't have as they didn't know the sender
+5. Command-line interface
+    - This one was agreed upon quickly as it is utilising Windows Command Prompt which is a command-line interface and doesn't have its own category
+6. Scheduled task
+    - This one too was easily agreed upon as the description clearly states that they scheduled tasks on a Windows machine 
+7. Mshta
+    - This one we both found by searching for the name of the .exe and considering it has its own entry we agreed that this should be the correct option 
+8. Remote file copy 
+    - The attacker is remotely copying payloads from their command and control server to the victim machine so this is the clear option 
+9. PowerShell
+    - We initially discussed whether this should be a command-line interface technique but after seeing that PowerShell has its own option this is the clear choice 
+10. Obfuscated files or information 
+    - They mention one unique sounding technique called obfuscation, after searching for this in MITRE ATT&CK it has its own category that suits the situation perfectly
+11. Registry run keys/start-up folder
+    - I (Lewis) initially put down New Service but after some discussion and further reading I have discovered the registry run keys/start-up folder technique that I didn't see before and agree that this is the better option 
+12. NTFS file attributes 
+    - Searching for NTFS in MITRE ATT&CK points multiple times to this technique and with it being in the defense evasion category it fits perfectly with the attackers using it to hide their payloads 
+13. New service 
+    - Pretty straight forward, we agreed on this one as it clearly states in the report that they created new services
+14. Modify existing service
+    - It states in the report that they changed existing services and therefore we both put this down and agree that it is a great fit 
+15. Office application startup 
+    - We had both put this down as it was related to the office app of Outlook but were both a little unsure until we did some further reading and discussion and have decided to settle with our original answers 
+16. Modify registry 
+    - The report states that they modify a specific value in the registry so this is the most obvious answer that we both chose
+    - There was some confusion made by the fact that it says to maintain persistence so Conor began by looking in the persistence section but settled with this option like me as maintaining undetected is also important to keeping persistence 
+17. Standard application later protocol
+    - The attackers were using HTTP to communicate and this is specifically stated in the description for this technique so it was the clear choice that we settled on 
+18. Commonly used port 
+    - The attackers were using HTTP so it was likely that they were going to use port 80 to try to remain undetected as its very common for HTTP traffic to be going through port 80
+19. Remote file copy 
+    - Again the attackers were downloading something from their file thereby copying it making this the best option 
+20. Regsvr32 
+    - If you search for the name of the exe it has its own category so this is the best fit for this situation 
+21. Masquerading 
+    - The report states that it was "masquerading" as something else and if you search for that in MITRE ATT&CK you can see clearly that this situation has its own category so we decided that this was the best fit
+22. Network service scanning 
+    - The attackers were scanning entire networks and then port scanning specific machines for open ports meaning that must have been looking for open and vulnerable services on those machines making this the most likely answer

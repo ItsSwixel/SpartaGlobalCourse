@@ -1,0 +1,126 @@
+Cyber Threat Intelligence:
+- Look at the problem from the outside and look at what an adversary would do
+- Understand as much as possible about the attackers 
+- Sharing of known information about attacks 
+- Known threat nodes
+- How different groups attack 
+
+Common Vulnerabilities and Exposures (CVE):
+- Specific instances of a weakness type that are demonstrably exploitable 
+- Provides known vulnerabilities of products 
+- Doesn't include risk, fix or exploit 
+- cve.mitre.org 
+- Mapped to OWASP Top 10
+- Maintained by MITRE 
+
+Common Weakness Enumeration (CWE):
+- The root cause of a vulnerability
+- NOT a database of vulnerabilities
+- Catergorisation system for vulnerabilities and weaknesses in software 
+- Each category of the type of flaw has an ID assigned to it 
+- Vulnerabilities are based on these weaknesses 
+- Shows related CVEs and CAPECs
+
+Attack Pattern:
+- A description of the common attributes and approaches employed by adversaries to exploit known weaknesses in cyber-enabled capabilities 
+- Defines challenges that an adversary may face and how they go about solving it 
+- Derives from the concept of design patterns but applied in a destructive rather than constructive context 
+- Generated from in-depth analysis of specific real-world exploit examples 
+- Requires knowledge about how specific parts of an attack are designed and executed
+- Gives guidance on ways to mitigate the attack's effectiveness 
+- Benefits 
+    - Training 
+        - Educate developers, testers, buyers, and managers 
+    - Requirements 
+        - Define potential threats 
+    - Design 
+         -Provide context for architectural risk analysis 
+    - Implementation 
+        - Prioritise review activities 
+    - Verification 
+        - Guide appropriate penetration testing 
+    - Release 
+        - Understand trends and attacks to monitor 
+    - Response 
+        - Leverage lessons learnt into preventative guidance 
+
+MITRE CAPEC:
+- How the weakness could be exploited
+- Stands for Common Attack Pattern Enumeration and Classification 
+- Developed by leveraging CWE and CVE 
+- Comprehensive dictionary and classification taxonomy of known attacks 
+- Used by analysts, developers, testers, and educators 
+- Mapping between CAPEC and CWE is not always one-to-one relationship 
+- Attack pattern would have to exploit all the listed weaknesses, a subset, or just one 
+- Often there are various weaknesses, each of which alone could be used to enable the exploit 
+- Execution flaws generally have three phases 
+    - Explore
+        - The ways to find a potential target to attack 
+    - Experiment
+        - Ways to determine if the target contains the weakness 
+    - Exploit 
+        - Suggested techniques for conducting the actual attack 
+
+MITRE ATT&CK:
+- Adversarial Tactics, Techniques & Common Knowledge (ATT&CK)
+- A knowledge base for adversary behaviour 
+- Free, Open and globally accessible 
+- Based on real-world observation 
+- Focus on 
+    - Tactics 
+    - Techniques 
+    - Procedures 
+- Use knowledge of adversary to help defenders 
+- Shift from indicators to behaviours 
+- CAPEC Vs ATT&CK 
+    - CAPEC 
+        - Focus on app security 
+        - Enumerates exploits against vulnerable systems 
+        - Includes social engineering/supply chain 
+        - Associated with Common Weakness Enumeration 
+    - ATT&CK 
+        - Focus on network defence 
+        - Based on threat intelligence and red team research 
+        - Provides contextual understanding of malicious behaviour 
+            - Maps certain attacks to known adversaries
+        - Supports testing and analysis of defence options 
+- Mapping ATT&CK to CTI 
+    - Understand ATT&CK 
+    - Map data to ATT&CK 
+    - Store and analyse 
+    - Defence recommendation 
+- attack.mitre.org
+- Steps
+    - Find behaviour 
+    - Research behaviour 
+    - Behaviour -> Tactics 
+    - Find technique 
+    - Compare results 
+        - Different team members may have different ideas about motivation
+- Mapping to ATT&CK 
+    - Sources 
+        - From Report/Finished 
+            - Check what adversary/software does 
+            - Analyse initial compromise and post-compromise 
+                - Running a command 
+                - Creating a foothold/task 
+                - Establishing a connection 
+                - Sending data 
+            - Research the behaviour 
+                - Consult other teams (Red, Blue, etc)
+                - Search on the internet 
+                - Academic and security-focused journals and reports 
+                - Time-consuming task but builds knowledge 
+            - Translate behaviour into tactic 
+                - What is adversary trying to accomplish?
+                - Tactics found on attack.mitre.org 
+            - Find the technique 
+                - Special behaviour to achieve a goal is often a single step 
+                - The toughest part 
+                - A behaviour might not be a technique 
+                - Search MITRE ATT&CK (keywords, commands, etc)
+            - Compare the results 
+                - Analysts have bias, its normal
+                - Different interpretations fro analysing the same situation
+                - Discuss the results 
+        - From Raw Data 
