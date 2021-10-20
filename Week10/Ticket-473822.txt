@@ -1,0 +1,22 @@
+ipconfig /all
+    - Discovery - System Network Configuration Discovery T1016
+arp -a 
+    - Discovery - System Network Configuration Discovery T1016
+echo %USERDOMAIN%\%USERNAME%
+    - Discovery - System Owner / User Discovery T1033
+tasklist /v 
+    - Discovery - Process Discovery T1057
+sc query
+    - Discovery - System Service Discovery T1057
+systeminfo
+    - Discovery - System Information Discovery T1082
+net group "Domain Admins" /domain 
+    - Discovery - Permission Groups Discovery T1069 
+net user /domain 
+    - Discovery - Account Discovery T1087
+net group "Domain Controllers" /domain 
+    - Discovery - Remote System Discovery T1018
+netsh advfirewall show all profiles 
+    - Discovery - System Network Configuration Discovery T1016
+netstat -ano 
+    - Discovery - System Network Connections Discovery T1049

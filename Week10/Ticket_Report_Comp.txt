@@ -1,0 +1,3 @@
+Group: Lewis & Jordan
+
+We managed to get almost all the same answers other than Jordan put down Execution - Command-line interface for all of them as they were all done via a CLI and I didn't. I would agree with him that this was a good move as its an important behaviour to note where they ran all of the commands. Other than this minor difference we got the same answers for the rest of the commands after both doing some research into what some commands did, it was pretty straight forward as to which ones to choose especially considering they were all in the discovery category.

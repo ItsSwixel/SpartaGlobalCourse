@@ -121,6 +121,92 @@ MITRE ATT&CK:
                 - Search MITRE ATT&CK (keywords, commands, etc)
             - Compare the results 
                 - Analysts have bias, its normal
-                - Different interpretations fro analysing the same situation
+                - Different interpretations from analysing the same situation
                 - Discuss the results 
         - From Raw Data 
+            - More data available at procedure level 
+            - Working on case from scratch (with nobody else's bias)
+            - Needs great technical knowledge 
+            - Depends on the data collected after an incident response (during digital forensic)
+            - Only happens in 2 cases 
+                - Worldwide attack 
+                - The 3rd party firm would have to if you hired them after a breach/if they were responsible for protecting your network 
+            - Steps
+                - Find behaviour 
+                    - Similar to mapping from a report 
+                    - Behaviour will have to be found from data not from a report 
+                - Research the behaviour 
+                    - May require expertise in specific domains, such as 
+                        - Digital Forensics 
+                        - Specific operating system 
+                        - Specific network devices 
+                        - Specific data types 
+                    - May require many data sources or context
+                    - May require consulting/interviewing other team members 
+                    - May require searching for similar cases 
+                - Finding the technique 
+                    - Think about concurrent techniques, such as 
+                        - Data compression (Exfiltration) + Data encryption (Exfiltration)
+                        - Spear-phishing attachment (Initial Access) + User execution (Execution)
+                        - Data from local system (Collection) + Email collection (Collection)
+                - Comparing results 
+                    - Same as in the report 
+    - Recommendations 
+        - Determine priority techniques 
+        - Research how techniques are being used 
+        - Research defensive options for those techniques 
+        - Research organisational capability/constraints 
+        - Determine what tradeoffs are for the organisation on specific options 
+        - Make recommendations
+
+Attack Navigator:
+- https://mitre-attack.github.io/attack-navigator/
+
+
+Threat Modelling:
+- Definition & Benefits
+    - Identifying what threats and organisation, a target network, or an in-scope application should be worried about 
+    - For penetration testing
+        - modelling (mapping out)
+        - the threats (things that can attack/harm)
+        - To inform of the types of activities conducted 
+        - Inform the risk for the discovered vulnerabilities 
+    - After penetration testing (Organisations and Blue teams)
+        - applying countermeasures and mitigating controls to address the dangers 
+- Threat modelling questions 
+    - Where am I most vulnerable to attack?
+    - What are the most relevant threats?
+    - What do I need to do to safeguard against these threats?
+- Threat Modelling Process
+    - Identify assets 
+    - Architecture overview 
+    - Decompose application 
+    - Identify threats 
+    - Document threats 
+    - Rate threats 
+- STRIDE 
+    - Spoofing
+    - Tampering
+    - Repudiation
+    - Information Disclosure
+    - Denial of Service 
+    - Elevation of Privilege
+- PASTA
+    - Process for Attack Simulation & Threat Analysis 
+    - Stages
+        - Define objectives
+        - Define technical scope 
+        - Decomposition and analysis of application 
+        - Threat analysis 
+        - Vulnerabilities and weakness analysis 
+        - Analyse modelling and simulation 
+        - Risk and impact analysis
+- DREAD
+    - Damage
+    - Reproducibility 
+    - Exploitability 
+    - Affected users 
+    - Discoverability 
+- Tools
+    - OWASP threat-dragon
+    
