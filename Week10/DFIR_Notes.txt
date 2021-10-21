@@ -231,8 +231,70 @@ Digital Forensics:
 - Types
     - Computer Forensics
         - Originally digital forensics was called computer forensics 
+        - Now limited to analysing and collecting from 
+            - Computer systems 
+            - Embedded systems 
+            - Any static memory (like USB pen drives)
+        - It includes reporting the results
     - Mobile device Forensics
+        - Collect data from mobile devices 
+        - Added in recent years after mobile devices got a lot more sophisticated 
+        - Different enough from a normal PC though that they require different expertise 
+        - Data from mobiles include 
+            - Short Message Services (Texts)
+            - Emails 
+            - Location 
+            - Call log 
+            - User dictionary content 
+                - Predictive text behaviour
+            - Data from installed applications 
+            - System files 
+            - Usage logs 
+            - And any other deleted data 
     - Network Forensics
+        - Capturing and analysing network traffic and network packets over local and wide area networks 
+        - Analysis also includes intrusion detection 
+        - Network data is considered a proactive investigation element. Has 2 systems to collect data
+            - Catch-it-as-you-can 
+                - Needs a lot of storage as you try to capture everything on the network 
+            - Stop, look, and listen
     - Database Forensics
+        - Study of databases and its metadata
+        - Database forensics analyses
+            - Database content 
+            - Log files 
+            - in-RAM data to recover pieces of digital evidence or to build a timeline for the incident 
     - Forensic Data Analysis 
+        - Covers the investigation of financial crimes associated with structured data (such as data from apps or their databases)
+        - Primary objective is to find a pattern behind any fraudulent activities 
+        - Unstructured data usually analysed under computer forensics
     - Email Forensics
+        - Email header analysis 
+        - Email server investigation 
+        - Investigation of network devices 
+        - Sender mailer fingerprints
+        - Software embedded identifiers 
+        - Bait tactics 
+            - Tricking the criminal into giving you their IP to try and find their general location
+    - Cloud Forensics 
+        - Application of digital forensics in cloud computing as a subset of network forensics to gather and preserve evidence in a way that is suitable for presentation in a court of law 
+        - Combination of digital forensics, network, hardware, database, etc 
+        - Involves interactions among various cloud actors to facilitate internal and external investigations 
+            - cloud providers
+            - cloud consumers 
+            - cloud broker 
+            - cloud carrier 
+            - cloud auditors
+        - Legally it is multi-jurisdiction and multi-tenant situations making its very difficult to work around as the server may be in another country
+- Phases 
+    - First response 
+        - Action you do right after the incident is known 
+    - Search and seizure 
+        - Search all devices included and try to take them 
+    - Collect the evidence 
+    - Secure the evidence
+    - Data acquisition 
+    - Data analysis 
+    - Evidence assessment 
+    - Documentation and reporting 
+    - Testify as an expert witness 
