@@ -1,0 +1,238 @@
+Digital Forensics Incident Response
+
+- Incident Response 
+    - Definition
+        - A structured methodology for handling security incidents, breaches, and cyber threats
+    - A well-defined IR plan (IRP) allows you to:
+        - effectively identify and minimise the damage
+        - reduce the cost of a cyber attack 
+        - finding and fixing the cause to prevent future attacks
+    - IR & Threat Modelling 
+        - Two-way relation
+            - When an attack happens 
+            - After the attack 
+    - Severity Matrix
+        - Critical
+            - Over 80% of staff are unable to work 
+            - Critical systems offline with no known resolution
+            - High risk to/definite breach of sensitive client or personal data
+            - Financial impact of £[TBC]
+            - Severe reputational damage - likely to impact the business long term
+        - High
+            - 50% of staff unable to work
+            - Risk of breach of personal or sensitive data 
+            - Non-critical systems affected, or critical systems affected with known (quick) resolution
+            - Financial impact of £[TBC]
+            - Potential serious reputational damage
+        - Medium
+            - etc
+        - Low
+            - etc
+    - Incident Types
+        - Check Incidence_Types.png
+    - IR Plan Steps
+        - Preparation 
+            - Questions to address
+                - Has everyone been trained on security policies?
+                - Have your security policies and incident response plan been approved by the appropriate management?
+                - Does the incidence response team know their roles and the required notifications to make?
+                - Have all incidence response team members participated in mock drills?
+                - Give IR team members the tools needed beforehand
+        - Identification
+            - Questions to address
+                - When did the event happen? 
+                - How was it discovered?
+                - Who discovered it?
+                - Have any other areas been impacted?
+                - What is the scope of the compromise?
+                - Does it affect operations?
+                - Has the source (point of entry) of the event been discovered?
+        - Containment 
+            - Questions to address
+                - What has been done to contain the breach in the short term?
+                - What has been done to contain the breach in the long term?
+                - Has any discovered malware been quarantined from the rest of the environment?
+                - What sort of backups are in place?
+                - Does your remote access require true multi-factor authentication?
+                - Have all access credentials been reviewed for legitimacy, hardened and changed?
+                - Have you applied all recent security patches and updates?
+        - Eradication 
+            - Questions to address
+                - Have artifacts/malware from the attacker been securely removed?
+                - Has the system been hardened, patched, and updates applied?
+                - Can the system be re-imaged?
+        - Recovery
+            - Questions to address
+                - When can the systems be returned to production?
+                - Have systems bene patched, hardened and tested?
+                - Can the system be restored from a trusted backup?
+                - How long will the affected systems be monitored and what will you look for when monitoring?
+                - What tools will ensure similar attacks will not reoccur?
+        - Post-Incident Activity (Lessons Learned)
+            - Questions to address
+                - What changes need to be made to the security?
+                - How should employees be trained differently?
+                - What weakness did the breach exploit?
+                - How will you ensure a similar breach doesn't happen again?
+            - Things to have 
+                - Emergency contact/communications list 
+                - At least one conference number 
+                - Escalation criteria 
+                - System backup and recovery processes list 
+                - Forensics analysis list 
+                - Jumpbag list 
+                - Security policy review list 
+    - Playbooks
+        - A playbook (or a runbook) is a detailed response plan, usually focused on a specific incident type
+
+DDoS Playbook:
+- Preparation
+    - Determine core operations team and define roles
+        - roles
+            - Vulnerability manager 
+            - Threat manager 
+            - Risk manager
+    - Dispute Resolution 
+        - Solve any disputes about roles and make sure everyone is on the same page about their roles and what team they are a part of
+    - Interviews 
+        - People to speak to 
+            - User
+            - Manager 
+            - Physical security 
+            - Key stakeholders 
+    - Choose whether you want to take the internal path or the external path and document that decision and the reasons why
+
+- Detect
+    - Define your threat indicators
+    - Does this DDoS attack fit the usual indicators or is it a special case that requires custom indicators?
+    - Custom 
+        - If there is something unusual about the attack and it requires custom indicators then these need to be created
+    - Standard
+        - The standard indicators are as follows
+        - Detection of unknown or unidentified packets from unknown senders 
+        - Peaked amounts of inbound data 
+        - Unknown or unexpected incoming internet traffic 
+        - Alerting from firewall and intrusion detection systems 
+        - Notification from outside organisations (ISP, 3rd party, business partners)
+    - Categorise the incident 
+        - Its important to categorise the incident so you know what steps to take and the risk involved with this attack 
+    - Request packet capture
+        - Try to capture the incoming packets for inspection during digital forensics to try and locate the sources and maybe the command and control server
+    - Conduct scans 
+        - Try to find out as much information as possible about the attack
+        - What kind of packets are coming in?
+        - Where are the packets coming from?
+        - How many IPs are the packets coming from?
+        - What system are they all be directed towards?
+        - Whats in the contents of the packets?
+
+- Analyse
+    - Much like when you had to define the threat indicators you now need to define the risk factors
+    - You can either create your custom factors like you did with the threats or you can use a standard version 
+    - Standard 
+        - Products/Goods/Services are affected by this attack 
+        - Customers are affected by this incident 
+        - Public or personnel safety affected 
+        - Ability to control/record/measure/track any significant amounts of inventory/products/cash/revenue has been lost 
+        - This act is being launched by known entities 
+        - There is internal knowledge of this incident 
+        - There is external knowledge of this incident 
+        - Worst-case business impact if unable to mitigate this attack 
+    - Begin determining patch methods for any vulnerabilities that is allowing this attack to happen 
+    - Log collection
+        - Make sure that all log collection systems are running and creating accurate logs
+    - Evidence collection 
+        - Make sure that no evidence is being tampered with by any IT technicians 
+        - Make sure that the evidence is being collected in an effective manner
+    - Data capture
+        - Capture as much data about the attack as possible to give you the best picture of what is happening and why 
+    - Analysis
+        - Look into all the logs and evidence that has been collected and attempt to deduce anything about the attack that can help with mitigation
+
+- Contain
+    - Identify the system(s) that have been targeted 
+    - Identify systems that have suffered outage or degradation of services
+    - Identify the IT services being impacted 
+    - Identify critical systems that are at risk from DoS/DDoS
+        - Servers
+        - Desktops 
+        - Laptops 
+        - Mobiles 
+        - VMs
+        - LDAP Directory 
+    - Identify type of packets being utilised 
+    - Identify critical choke points and bottlenecks on network that could increase the effect 
+    - Identify the source & if their networks can be Blackholed
+        - Blackholing is redirecting traffic to a certain place on the network where it can be silently dropped from the network 
+        - Select database 
+        - Take the following into account 
+            - Vulnerability logs
+            - System logs
+            - Threat database 
+            - Incident database 
+        - Query database 
+        - Generate report 
+    - Identify additional traffic rerouting or egress filtering to block more traffic 
+        - View report 
+        - View record details 
+        - Select records 
+        - Copy record details 
+    - Identify the tools used to detect the attack 
+        - SIEM
+        - IDS 
+        - Firewall 
+        - Scanners 
+        - Antivirus 
+        - Network monitoring tools 
+
+- Eradicate 
+    - Triage & Confirm incident report 
+        - Request system patch
+        - Request network segment or other configuration change 
+        - Add/Change/Remove affected system/site/network 
+    - Communications 
+        - Conference call
+        - Direct phone calls 
+        - Intranet meeting 
+        - In-Person meeting 
+        - Mobile messaging 
+        - Internet messaging 
+    - Mitigate attack 
+        - Identify any alternate course for business operations that will be effected 
+        - Create whitelist of source IPs and services that must be allowed into network 
+        - Coordinate with business continuity on rolling over services to any alternate sites 
+        - Coordinate with ISP to determine best courses of action 
+
+- Recover 
+    - Recover systems 
+        - Re-image 
+        - IDS/IPS & Firewall updates 
+        - Determine alternate network ingress and egress solutions of malware causes DoS
+    - Incident Remediation 
+    
+- Post-Incident 
+    - Incident review 
+        - Electronic Personal Health Information compromised?
+        - Sensitive government information compromised 
+    - Lessons uncovered 
+        - Discovery meeting 
+        - Policy updates 
+        - Process updates defined 
+        - configuration updates defined 
+    - Lessons applied 
+        - New policies implemented 
+        - Process changes implemented 
+        - Configurations applied 
+        - Response workflow updated 
+
+Digital Forensics:
+- Definition
+    - Digital forensics science is a branch of forensic science that focuses on the recovery and investigation of material found in digital devices related to cybercrime
+- Types
+    - Computer Forensics
+        - Originally digital forensics was called computer forensics 
+    - Mobile device Forensics
+    - Network Forensics
+    - Database Forensics
+    - Forensic Data Analysis 
+    - Email Forensics
