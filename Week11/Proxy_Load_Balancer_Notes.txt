@@ -1,0 +1,35 @@
+Forward Proxy:
+- A server to pass the requests from the clients on a private/isolated network to the internet (and the responses back to the client)
+- Caching
+- E.g. Squid for HTTP/s (Open source)
+
+Reverse Proxy:
+- A server to pass the HTTP/s requests from the clients on the internet to a server/multiple servers on a private/isolated network (and the response back to the clients)
+- E.g. Nginx
+- Caching
+- Compression 
+- SSL/TLS Termination
+- Authentication
+
+Linux Links:
+- ln -s [file to point to] [name of link]
+    - Creates a soft link to another file within the file system
+    - Saves the need for duplicated files
+- ln [file to point to] [name of link]
+    - This is a hard link 
+    - This means the link is pointing directly to the content in file1 and not the file file1 itself
+
+Nginx:
+- sites-available
+    - /etc/nginx/sites-available
+    - All the websites in Nginx
+- sites-enabled
+    - /etc/nginx/sites-enabled
+- /var/html/www
+    - The directory that Nginx looks for pages by default
+
+Load Balancer:
+- A server that balances the received requests to a group of servers that do the same job (And the responses back to clients)
+- A generic concept that can be used with any protocol 
+- Can be used together with a reverse proxy (for HTTP/s)
+- E.g. Nginx for HTTP/s 

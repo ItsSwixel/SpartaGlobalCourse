@@ -30,6 +30,16 @@ Digital Forensics Incident Response
             - etc
     - Incident Types
         - Check Incidence_Types.png
+    - Pyramid of Pain 
+        - Definition 
+            The Pyramid of Pain is a conceptual model for the effective use of Cyber Threat Intelligence in threat detection operations, with a particular emphasis on increasing the adversaries' cost of operations.
+        - Sections (Top to Bottom)
+            - TTPs (Tactics, Techniques, Procedures)
+            - Tools 
+            - Network/Host Artifacts 
+            - Domain Names
+            - IP Addresses
+            - Hash Values
     - IR Plan Steps
         - Preparation 
             - Questions to address
