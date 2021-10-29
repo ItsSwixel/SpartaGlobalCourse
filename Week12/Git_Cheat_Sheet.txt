@@ -1,0 +1,8 @@
+git branch -a (Shows all branches both local and remote)
+git checkout [branch name] (Move from your current branch to the one specified)
+git checkout -b [branch name] (Create a new branch and move over to it) (This will create a branch from the branch that you're on when you run it)
+git push [remote repo name, default: origin] --delete [branch name] (Delete a branch that is on the remote repo)
+git branch -d [branch name] (Delete a branch that is only stored locally)
+
+*DON'T WORRY ABOUT MERGING TO MAIN, LET LEWIS KNOW AND HE WILL DO THAT FOR YOU AFTER CHECKING*
+Video tutorial can be found in teams chat.

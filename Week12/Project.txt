@@ -1,0 +1,23 @@
+Develop Enterprise vulnerability checker 
+Over 100 systems in the enterprise 
+    - some are systems that we got from other providers and some are bespoke 
+    - some are on the network and some are on the cloud 
+Multi-user framework 
+    - Project/system managers can login and create projects they are working on 
+    - Should be able to add components to the project 
+- Framework should send notifications for all new vulnerabilities found for each component from multiple sources
+- Must be able to add new sources of vulnerability easily 
+- User database should be separate from the vuln database 
+- Passwords must be hashed using bcrypt
+- Passwords must contain a salt 
+- SSL certificates needed for communications 
+- App should be developed using TDD and OOP
+- Deployment must be automatic using Terraform and Ansible
+- Jenkins should be used for automation 
+- App should be tested against bandit before its deployed 
+- 3 Threat models
+    - 1 for pipeline 
+    - 1 for production environment 
+    - 1 for framework itself 
+
+Send alerts through email
